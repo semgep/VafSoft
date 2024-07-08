@@ -4,6 +4,9 @@ header {
     /* padding: 10px ; */
     position: fixed;
     top: 0;
+    left: 0;
+    text-align: center; 
+    box-sizing: border-box;
     width: 100%;
     z-index: 1000; /* Убедитесь, что панель поверх всего */
 }

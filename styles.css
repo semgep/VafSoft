@@ -28,7 +28,7 @@ header {
 .menu-icon,
 .search-icon {
   cursor: pointer;
-  font-size: 24px;
+  font-size: 16px; /* Или medium */
   flex-shrink: 0; /* Предотвращение сжатия иконки меню */
 }
 nav {

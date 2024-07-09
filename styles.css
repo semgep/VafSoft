@@ -1,3 +1,9 @@
+
+ body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
 header {
   background-color: #000; /* Черный фон */
   color: #fff;

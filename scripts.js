@@ -1,3 +1,14 @@
+function getNow() {
+  const options = {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    timeZoneName: "short",
+  };
+  return new Date().toLocaleString("en-US", options);
+}
 function toggle(a) {
   LastObj != undefined && closeText(LastObj),
     (LastObj == undefined ||
@@ -62,3 +73,77 @@ function showDiv(id) {
 function hideDiv(id) {
   document.getElementById(id).style.display = "none";
 }
+
+function toggleMenu() {
+  var menu = document.getElementById("menu");
+  if (menu.classList.contains("show")) {
+    menu.classList.remove("show");
+    menu.classList.add("hidden");
+  } else {
+    menu.classList.add("show");
+    menu.classList.remove("hidden");
+  }
+}
+function toggleSearch() {
+  var search = document.getElementById("search");
+  if (search.classList.contains("show")) {
+    search.classList.remove("show");
+    search.classList.add("hidden");
+  } else {
+    search.classList.add("show");
+    search.classList.remove("hidden");
+  }
+}
+
+function searchSite() {
+  var input = document.getElementById("searchInput").value.toLowerCase();
+  var content = document.querySelectorAll("body *");
+  var found = false;
+
+  content.forEach(function (element) {
+    if (element.textContent.toLowerCase().includes(input)) {
+      highlightText(element, input);
+      element.scrollIntoView({ behavior: "smooth", block: "center" });
+      found = true;
+      // Добавляем задержку перед прокруткой
+      setTimeout(function () {
+        scrollToElement(element);
+      }, 100); // 100 миллисекунд задержки
+      return false;
+    }
+  });
+  if (!found) {
+    alert("No results found");
+  }
+}
+function scrollToElement(element) {
+  element.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+function highlightText(element, text) {
+  var innerHTML = element.innerHTML;
+  var index = innerHTML.toLowerCase().indexOf(text);
+  if (index >= 0) {
+    innerHTML =
+      innerHTML.substring(0, index) +
+      "<span class='highlight'>" +
+      innerHTML.substring(index, index + text.length) +
+      "</span>" +
+      innerHTML.substring(index + text.length);
+    element.innerHTML = innerHTML;
+  }
+}
+function begin() {
+  document.addEventListener("load", function () {
+    window.scrollTo(0, 0); // Прокрутка страницы к началу при загрузке
+  });
+}
+document.addEventListener("DOMContentLoaded", function () {
+  window.scrollTo(0, 0); // Прокрутка страницы к началу при загрузке
+  var menuLinks = document.querySelectorAll("#menu ul li a");
+  menuLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      toggleMenu();
+    });
+  });
+});

@@ -17,13 +17,7 @@ header {
   /* justify-content: center; */
   justify-content: space-between;
 }
-/* .header-content {
-  flex-grow: 1; /* Заполнение оставшегося пространства
-  display: flex;
-  justify-content: center; /* Центрирование содержимого
-  align-items: center;
-  margin-bottom: 20px;
-} */
+
 .header-content {
   display: flex;
   flex-direction: column;
@@ -47,10 +41,7 @@ header {
   font: medium Calibri;
   /* margin-bottom: 20px; */
 }
-/* .header-content h3 {
-  margin: 0;
-  font: medium Calibri;
-} */
+
 .menu-icon,
 .search-icon {
   position: absolute;
@@ -71,7 +62,7 @@ nav {
   transform: translateX(-100%); /* Скрываем меню за пределами экрана */
   transition: transform 0.3s ease;
   z-index: 999; /* Убедитесь, что меню над контентом */
-  margin-top: 100px;
+  margin-top: 66px;
 }
 nav ul {
   list-style-type: none;

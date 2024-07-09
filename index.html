@@ -1,18 +1,48 @@
-
 <!DOCTYPE html> <html> 
    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js"></script>
-   </head>
-   
-   <body> 
-   <div style="border: 1px solid black; padding: 10px; padding-top: 20px; box-sizing: border-box; margin-top: 90px;">
+      <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Publications</title>
+        <link rel="stylesheet" href="styles.css">
+        <!-- <script src="luxon.min.js" defer></script> -->
+        <script src="scripts.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js" defer></script>
+        <!-- <script src="https://unpkg.com/luxon@3.3.0/build/global/luxon.min.js" defer></script> -->
+   </head> 
+   <!-- <body  onload="console.log(getNow())">  -->
+   <body>   
+      <div id = "Publications" style="border: 1px solid black; padding: 10px; padding-top: 20px; box-sizing: border-box; margin-top: 130px;">
       <header>
-         <h1>My Portfolio</h1>
+         <div class="menu-icon" onclick="toggleMenu()">
+            &#9776; <!-- Это символ меню из трех горизонтальных полос -->
+        </div>
+         <h1>Sergei Gepshtein's Portal</h1>
+         <div class="search-icon" onclick="toggleSearch()">
+            &#128269; <!-- Символ лупы -->
+        </div>
       </header>
+      <nav id="menu" class="hidden">
+         <div class="close-menu" onclick="toggleMenu()">
+            &times; <!-- Символ крестика -->
+         </div>
+         <ul>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Publications">Publications</a></li>
+         </ul>
+      </nav>
+      <!-- </header> -->
+      <!-- <div id="search" class="hidden">
+         <input type="text" id="searchInput" placeholder="Search...">
+         <button onclick="searchSite()">Search</button>
+         <button onclick="toggleSearch()">&times;</button>
+     </div> -->
+     <div id="search" class="hidden">
+      <div class="close-search" onclick="toggleSearch()">
+        &times; <!-- Символ крестика -->
+      </div>
+      <input type="text" id="searchInput" placeholder="Search...">
+      <button onclick="searchSite()">Search</button> <!-- Добавьте эту строку -->
+    </div>
    <button id="Filter" onclick = "toggleDisplay();"> Filter</button>
    <button onclick="processSelection()">Apply</button>
    <span id ="Btns" style = "display:none;">
@@ -46,18 +76,19 @@
    <label><input type="checkbox" value=15>touch</label>
    <label><input type="checkbox" value=11,12,15,16,3>vision</label>
    </div></div>
-   <div style='font-family:Calibri; border: 1px solid white; padding: 2px;'>
-   <div style="display:block;" id="Article_2" class = "article">
+   <div class="content-box" style='font-family:Calibri; border: 1px solid white; padding: 2px;'>
+   <div  style="display:block;" id="Article_2" class = "article">
+   <!-- <div id = "Publications" style="display:block;" id="Article_2" class = "article"> -->
    <p><font size='3'> <span style='font-weight: bold;'> Perceptual space as a well of possibilities</span><p>  Springer/Nature 2022 </p><p> The meaning of 'space' varies significantly among scientific disciplines (such as physics and neuroscience) and practical professions (such as architecture and design). Here, we seek a unifying property of the various concepts of space, grounded in science and useful for design. </p></p>
    <button id="Button_2a" onclick="toggle(this);"> [+] Citation</button>
    <button id="Button_2b" onclick="toggle(this);"> [+] Abstract</button>
    <button id="Button_2c" onclick="toggle(this);"> [+] Links</button>
    
    <p style="display:none;"   id="Text_2a"> 
-   <span><font size='3'> Gepshtein S (2022). Perceptual space as a well of possibilities. <span style="font-style: italic;">Affordances in Everyday Life: A Multidisciplinary Collection of Essays, Springer/Nature </span>  (), 123вЂ“137
+   <span><font size='3'> Gepshtein S (2022). Perceptual space as a well of possibilities. <span style="font-style: italic;">Affordances in Everyday Life: A Multidisciplinary Collection of Essays, Springer/Nature </span>  (), 123–137
    . </font></span>
    
-   <p style="display:none;"   id="Text_2b"> Everyone seems to know what space is. But the meaning of вЂњspaceвЂќ varies from person to person and from one occasion to another. It varies among the academic disciplines concerned with spatiality, such as physics, psychology and phenomenology, and among practical professions, such as architecture and filmmaking, stage design and creative writing. How can we reconcile this polyphony? Is there an underlying root concept of space? In other words, do these multiple and disparate concepts have a вЂњfocal meaningвЂќ? One manner of answering these questions is offered here, by considering a moving person who is sequentially exposed to specific possibilities of experience at different spatial locations. Reminiscent of the concept of affordance, the present account is concerned with possibilities of experience, rather than with actual experience, and it is trained on distributed patterns of perception and behavior, rather than on their piecewise characterization. </p>
+   <p style="display:none;"   id="Text_2b"> Everyone seems to know what space is. But the meaning of “space” varies from person to person and from one occasion to another. It varies among the academic disciplines concerned with spatiality, such as physics, psychology and phenomenology, and among practical professions, such as architecture and filmmaking, stage design and creative writing. How can we reconcile this polyphony? Is there an underlying root concept of space? In other words, do these multiple and disparate concepts have a “focal meaning”? One manner of answering these questions is offered here, by considering a moving person who is sequentially exposed to specific possibilities of experience at different spatial locations. Reminiscent of the concept of affordance, the present account is concerned with possibilities of experience, rather than with actual experience, and it is trained on distributed patterns of perception and behavior, rather than on their piecewise characterization. </p>
    <p style="display:none;" id="Text_2c">
    <span> &#9679; <a href="https://link.springer.com/chapter/10.1007/978-3-031-08629-8_12">Publisher link</a> </span><br>
    <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Gepshtein%20-%20Space%20as%20Possibilities%20-%202022.pdf">PDF</a> </span><br>
@@ -71,7 +102,7 @@
    <p style="display:none;"   id="Text_3a"> 
    <span><font size='3'> Gepshtein S, Pawar AS, Kwon S, Savel'ev S, Albright TD (2022). Spatially distributed computation in cortical circuits. <span style="font-style: italic;">Science Advances</span> 8 (16), 1-19. </font></span>
    
-   <p style="display:none;"   id="Text_3b"> The traditional view of neural computation in the cerebral cortex holds that sensory neurons are specialized, i.e., selective for certain dimensions of sensory stimuli. This view was challenged by evidence of contextual interactions between stimulus dimensions in which a neuronвЂ™s response to one dimension strongly depends on other dimensions. Here we use methods of mathematical modeling, psychophysics, and electrophysiology to address shortcomings of the traditional view. Using a model of a generic cortical circuit, we begin with the simple demonstration that cortical responses are always distributed among neurons, forming characteristic waveforms which we call "neural waves." When stimulated by patterned stimuli, circuit responses arise by interference of neural waves. Results of this process depend on interaction between stimulus dimensions. Comparison of modeled responses with responses of biological vision makes it clear that the framework of neural wave interference provides a useful alternative to the standard concept of neural computation. </p>
+   <p style="display:none;"   id="Text_3b"> The traditional view of neural computation in the cerebral cortex holds that sensory neurons are specialized, i.e., selective for certain dimensions of sensory stimuli. This view was challenged by evidence of contextual interactions between stimulus dimensions in which a neuron’s response to one dimension strongly depends on other dimensions. Here we use methods of mathematical modeling, psychophysics, and electrophysiology to address shortcomings of the traditional view. Using a model of a generic cortical circuit, we begin with the simple demonstration that cortical responses are always distributed among neurons, forming characteristic waveforms which we call "neural waves." When stimulated by patterned stimuli, circuit responses arise by interference of neural waves. Results of this process depend on interaction between stimulus dimensions. Comparison of modeled responses with responses of biological vision makes it clear that the framework of neural wave interference provides a useful alternative to the standard concept of neural computation. </p>
    <p style="display:none;" id="Text_3c">
    <span> &#9679; <a href="https://www.science.org/doi/10.1126/sciadv.abl5865">Publisher link</a> </span><br>
    <span> &#9679; <a href="https://www.science.org/doi/epdf/10.1126/sciadv.abl5865 "> PDF</a> </span><br>
@@ -85,7 +116,7 @@
    <p style="display:none;"   id="Text_4a"> 
    <span><font size='3'> Gepshtein S (2020). Species of space. <span style="font-style: italic;">Architectural Design</span> 90 (6), 36-40. </font></span>
    
-   <p style="display:none;"   id="Text_4b"> Multiple concepts of space have originated in different arts and sciences, related to one another but also distinct because they are viewed through radically different lenses. In physics and physiology, space is an aspect of the objective reality, couched in terms of metrics and distances. In psychology and phenomenology, space is conceived from the first-person perspective, structured by oneвЂ™s plans, intentions and affordances. Different yet are the concepts of space entertained by artists and designers: in painting and photography, cinema and architecture, literary criticism and philosophy of art. Here space is вЂњconstructedвЂќ to support praxis: representing a solid object on a surface, facilitating navigation or analyzing a narrative. In the emerging arena of Neuroscience for Architecture it is important to appreciate differences between these concepts of space, learn about them in their context and then understand how they mix in practice. The author shows how the space of experience is articulated by boundaries that arise from the human body. Although intangible and fluid, these boundaries are nevertheless real and systematic, which is why they readily yield to the methods of science. </p>
+   <p style="display:none;"   id="Text_4b"> Multiple concepts of space have originated in different arts and sciences, related to one another but also distinct because they are viewed through radically different lenses. In physics and physiology, space is an aspect of the objective reality, couched in terms of metrics and distances. In psychology and phenomenology, space is conceived from the first-person perspective, structured by one’s plans, intentions and affordances. Different yet are the concepts of space entertained by artists and designers: in painting and photography, cinema and architecture, literary criticism and philosophy of art. Here space is “constructed” to support praxis: representing a solid object on a surface, facilitating navigation or analyzing a narrative. In the emerging arena of Neuroscience for Architecture it is important to appreciate differences between these concepts of space, learn about them in their context and then understand how they mix in practice. The author shows how the space of experience is articulated by boundaries that arise from the human body. Although intangible and fluid, these boundaries are nevertheless real and systematic, which is why they readily yield to the methods of science. </p>
    <p style="display:none;" id="Text_4c">
    <span> &#9679; <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ad.2629">Publisher link</a> </span><br>
    <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Gepshtein_AD2020_full.pdf "> PDF</a> </span><br>
@@ -131,7 +162,7 @@
    <p style="display:none;"   id="Text_7a"> 
    <span><font size='3'> Gepshtein S, Li X, Snider J, Plank M, Lee D & Poizner H (2014). Dopamine function and the efficiency of human movement. <span style="font-style: italic;">Journal of Cognitive Neuroscience</span> 26 (3), 645-657. </font></span>
    
-   <p style="display:none;"   id="Text_7b"> To sustain successful behavior in dynamic environments, active organisms must be able to learn from the consequences of their actions and predict action outcomes. One of the most important discoveries in systems neuroscience over the last 15 years has been about the key role of the neurotransmitter dopamine in mediating such active behavior. Dopamine cell firing was found to encode differences between the expected and obtained outcomes of actions. Although activity of dopamine cells does not specify movements themselves, a recent study in humans has suggested that tonic levels of dopamine in the dorsal striatum may in part enable normal movement by encoding sensitivity to the energy cost of a movement, providing an implicit вЂњmotor motivationalвЂќ signal for movement. We investigated the motivational hypothesis of dopamine by studying motor performance of patients with Parkinson disease who have marked dopamine depletion in the dorsal striatum and compared their performance with that of elderly healthy adults. All participants performed rapid sequential movements to visual targets associated with different risk and different energy costs, countered or assisted by gravity. In conditions of low energy cost, patients performed surprisingly well, similar to prescriptions of an ideal planner and healthy participants. As energy costs increased, however, performance of patients with Parkinson disease dropped markedly below the prescriptions for action by an ideal planner and below performance of healthy elderly participants. The results indicate that the ability for efficient planning depends on the energy cost of action and that the effect of energy cost on action is mediated by dopamine. </p>
+   <p style="display:none;"   id="Text_7b"> To sustain successful behavior in dynamic environments, active organisms must be able to learn from the consequences of their actions and predict action outcomes. One of the most important discoveries in systems neuroscience over the last 15 years has been about the key role of the neurotransmitter dopamine in mediating such active behavior. Dopamine cell firing was found to encode differences between the expected and obtained outcomes of actions. Although activity of dopamine cells does not specify movements themselves, a recent study in humans has suggested that tonic levels of dopamine in the dorsal striatum may in part enable normal movement by encoding sensitivity to the energy cost of a movement, providing an implicit “motor motivational” signal for movement. We investigated the motivational hypothesis of dopamine by studying motor performance of patients with Parkinson disease who have marked dopamine depletion in the dorsal striatum and compared their performance with that of elderly healthy adults. All participants performed rapid sequential movements to visual targets associated with different risk and different energy costs, countered or assisted by gravity. In conditions of low energy cost, patients performed surprisingly well, similar to prescriptions of an ideal planner and healthy participants. As energy costs increased, however, performance of patients with Parkinson disease dropped markedly below the prescriptions for action by an ideal planner and below performance of healthy elderly participants. The results indicate that the ability for efficient planning depends on the energy cost of action and that the effect of energy cost on action is mediated by dopamine. </p>
    <p style="display:none;" id="Text_7c">
    <span> &#9679; <a href="https://direct.mit.edu/jocn/article-abstract/26/3/645/28076/Dopamine-Function-and-the-Efficiency-of-Human">Publisher link</a> </span><br>
    <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Gepshtein_etal_JoCN2014.pdf">PDF</a> </span><br>
@@ -159,7 +190,7 @@
    <p style="display:none;"   id="Text_9a"> 
    <span><font size='3'> Kubovy M, Epstein W, Gepshtein S (2013). Visual perception: Theoretical and methodological foundations. <span style="font-style: italic;">In Healy AF & Proctor RW (Eds), Experimental Psychology, 2ed, Vol. 4 in Weiner IB (Editor-in-Chief) Handbook of Psychology. John Wiley & Sons, New York, USA. </span>  (), 85-119. </font></span>
    
-   <p style="display:none;"   id="Text_9b"> First, we provide a sketch of the theoretical foundations of our field. We lay out four major research programs (in the past they might have been called вЂњschoolsвЂќ), and then discuss how they address eight foundational questions that promise to occupy our discipline for many years to come. Second, we discuss psychophysics, which offers indispensable tools for the researcher. Here we lead the reader from the idea of threshold to the tools of signal detection theory. To illustrate our presentation of methodology, we have not focused on the classics that appear in much of the secondary literature. Rather, we have chosen recent research that showcases the current practice in the field, and the applicability of these methods to a wide range of problems. The contemporary view of perception maintains that perceptual theory requires an understanding of our environment as well as the perceiver. That is why, in the third section, we ask what are the regularities of the environment, how may they be discovered, and to what extent do perceivers use them. Here, too, we use recent research to exemplify this approach. </p>
+   <p style="display:none;"   id="Text_9b"> First, we provide a sketch of the theoretical foundations of our field. We lay out four major research programs (in the past they might have been called “schools”), and then discuss how they address eight foundational questions that promise to occupy our discipline for many years to come. Second, we discuss psychophysics, which offers indispensable tools for the researcher. Here we lead the reader from the idea of threshold to the tools of signal detection theory. To illustrate our presentation of methodology, we have not focused on the classics that appear in much of the secondary literature. Rather, we have chosen recent research that showcases the current practice in the field, and the applicability of these methods to a wide range of problems. The contemporary view of perception maintains that perceptual theory requires an understanding of our environment as well as the perceiver. That is why, in the third section, we ask what are the regularities of the environment, how may they be discovered, and to what extent do perceivers use them. Here, too, we use recent research to exemplify this approach. </p>
    <p style="display:none;" id="Text_9c">
    <span> &#9679; <a href="https://www.wiley.com/en-us/Handbook+of+Psychology%2C+Volume+4%2C+Experimental+Psychology%2C+2nd+Edition-p-9781118281949">Publisher link</a> </span><br>
    <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Kubovy_Epstein_Gepshtein_Wiley2e_2013.pdf">PDF</a> </span><br>
@@ -187,7 +218,7 @@
    <p style="display:none;"   id="Text_11a"> 
    <span><font size='3'> Gepshtein S (2010). Two psychologies of perception and the prospect of their synthesis. <span style="font-style: italic;">Philosophical Psychology</span> 23 (2), 217-281. </font></span>
    
-   <p style="display:none;"   id="Text_11b"> Two traditions have had a great impact on the theoretical and experimental research of perception. One tradition is statistical, stretching from Fechner's enunciation of psychophysics in 1860 to the modern view of perception as statistical decision making. The other tradition is phenomenological, from Brentano's вЂњempirical standpointвЂќ of 1874 to the Gestalt movement and the modern work on perceptual organization. Each tradition has at its core a distinctive assumption about the indivisible constituents of perception: the just-noticeable differences of sensation in the tradition of Fechner vs. the phenomenological Gestalts in the tradition of Brentano. But some key results from the two traditions can be explained and connected using an approach that is neither statistical nor phenomenological. This approach rests on a basic property of any information exchange: a principle of measurement formulated in 1946 by Gabor as a part of his quantal theory of information. Here the indivisible components are units (quanta) of information that remain invariant under changes of precision of measurement. This approach helped to understand how sensory measurements are implemented by single neural cells. But recent analyses suggest that this approach has the power to explain larger-scale characteristics of sensory systems. </p>
+   <p style="display:none;"   id="Text_11b"> Two traditions have had a great impact on the theoretical and experimental research of perception. One tradition is statistical, stretching from Fechner's enunciation of psychophysics in 1860 to the modern view of perception as statistical decision making. The other tradition is phenomenological, from Brentano's “empirical standpoint” of 1874 to the Gestalt movement and the modern work on perceptual organization. Each tradition has at its core a distinctive assumption about the indivisible constituents of perception: the just-noticeable differences of sensation in the tradition of Fechner vs. the phenomenological Gestalts in the tradition of Brentano. But some key results from the two traditions can be explained and connected using an approach that is neither statistical nor phenomenological. This approach rests on a basic property of any information exchange: a principle of measurement formulated in 1946 by Gabor as a part of his quantal theory of information. Here the indivisible components are units (quanta) of information that remain invariant under changes of precision of measurement. This approach helped to understand how sensory measurements are implemented by single neural cells. But recent analyses suggest that this approach has the power to explain larger-scale characteristics of sensory systems. </p>
    <p style="display:none;" id="Text_11c">
    <span> &#9679; <a href="https://www.tandfonline.com/doi/full/10.1080/09515081003727483">Publisher link</a> </span><br>
    <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Gepshtein_TwoPsychologies_2010.pdf">PDF</a> </span><br>
@@ -213,7 +244,7 @@
    <button id="Button_13c" onclick="toggle(this);"> [+] Links</button>
    
    <p style="display:none;"   id="Text_13a"> 
-   <span><font size='3'> TrommershГ¤user J, Gepshtein S, Maloney LT, Landy MS & Banks MS (2005). Optimal compensation for changes in task relevant movement variability. <span style="font-style: italic;">Journal of Neuroscience</span> 25 (31), 7169-7178. </font></span>
+   <span><font size='3'> Trommershäuser J, Gepshtein S, Maloney LT, Landy MS & Banks MS (2005). Optimal compensation for changes in task relevant movement variability. <span style="font-style: italic;">Journal of Neuroscience</span> 25 (31), 7169-7178. </font></span>
    
    <p style="display:none;"   id="Text_13b"> Effective movement planning should take into account the consequences of possible errors in executing a planned movement. These errors can result from either sensory uncertainty or variability in movement planning and production. We examined the ability of humans to compensate for variability in sensory estimation and movement production under conditions in which variability is increased artificially by the experimenter. Subjects rapidly pointed at a target region that had an adjacent penalty region. Target and penalty hits yielded monetary rewards and losses. We manipulated the task-relevant variability by perturbing visual feedback of finger position during the movement. The feedback was shifted in a random direction with a random amplitude in each trial, causing an increase in the task-relevant variability. Subjects were unable to counteract this form of perturbation. Rewards and penalties were based on the perturbed, visually specified finger position. Subjects rapidly acquired an estimate of their new variability in <120 trials and adjusted their aim points accordingly. We compared subjects' performance to the performance of an optimal movement planner maximizing expected gain. Their performance was consistent with that expected from an optimal movement planner that perfectly compensated for externally imposed changes in task-relevant variability. When exposed to novel stimulus configurations, aim points shifted in the first trial without showing any detectable trend across trials. These results indicate that subjects are capable of changing their pointing strategy in the presence of externally imposed noise. Furthermore, they manage to update their estimate of task-relevant variability and to transfer this estimate to novel stimulus configurations. </p>
    <p style="display:none;" id="Text_13c">
@@ -248,7 +279,7 @@
    <span> &#9679; <a href="https://www.sciencedirect.com/science/article/pii/S0960982203001337">Publisher link</a> </span><br>
    <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/GepshteinBanks_CurBio2003.pdf">PDF</a> </span><br>
     <hr></div>
-   <div style="display:block;" id="Article_16" class = "article">
+   <div  style="display:block;" id="Article_16" class = "article">
    <p><font size='3'> <span style='font-weight: bold;'> The emergence of visual objects in space-time</span><p>  PNAS 2000 </p><p> What we perceive as an object depends on whether its parts connect across time as separate elements or they combine into a spatially extended entity that persists in time. </p></p>
    <button id="Button_16a" onclick="toggle(this);"> [+] Citation</button>
    <button id="Button_16b" onclick="toggle(this);"> [+] Abstract</button>
@@ -257,11 +288,16 @@
    <p style="display:none;"   id="Text_16a"> 
    <span><font size='3'> Gepshtein S, Kubovy M (2000). The emergence of visual objects in space-time. <span style="font-style: italic;">Proceedings of the National Academy of Sciences, USA </span> 97 (14), 8186-8191. </font></span>
    
-   <p style="display:none;"   id="Text_16b"> It is natural to think that in perceiving dynamic scenes, vision takes a series of snapshots. Motion perception can ensue when the snapshots are different. The snapshot metaphor suggests two questions: (i) How does the visual system put together elements within each snapshot to form objects? This is the spatial grouping problem. (ii) When the snapshots are different, how does the visual system know which element in one snapshot corresponds to which element in the next? This is the temporal grouping problem. The snapshot metaphor is a caricature of the dominant model in the fieldвЂ”the sequential modelвЂ”according to which spatial and temporal grouping are independent. The model we propose here is an interactive model, according to which the two grouping mechanisms are not separable. Currently, the experiments that support the interactive model are not conclusive because they use stimuli that are excessively specialized. To overcome this weakness, we created a new type of stimulusвЂ”spatiotemporal dot latticesвЂ”which allow us to independently manipulate the strength of spatial and temporal groupings. For these stimuli, sequential models make one fundamental assumption: if the spatial configuration of the stimulus remains constant, the perception of spatial grouping cannot be affected by manipulations of the temporal configuration of the stimulus. Our data are inconsistent with this assumption. </p>
+   <p style="display:none;"   id="Text_16b"> It is natural to think that in perceiving dynamic scenes, vision takes a series of snapshots. Motion perception can ensue when the snapshots are different. The snapshot metaphor suggests two questions: (i) How does the visual system put together elements within each snapshot to form objects? This is the spatial grouping problem. (ii) When the snapshots are different, how does the visual system know which element in one snapshot corresponds to which element in the next? This is the temporal grouping problem. The snapshot metaphor is a caricature of the dominant model in the field—the sequential model—according to which spatial and temporal grouping are independent. The model we propose here is an interactive model, according to which the two grouping mechanisms are not separable. Currently, the experiments that support the interactive model are not conclusive because they use stimuli that are excessively specialized. To overcome this weakness, we created a new type of stimulus—spatiotemporal dot lattices—which allow us to independently manipulate the strength of spatial and temporal groupings. For these stimuli, sequential models make one fundamental assumption: if the spatial configuration of the stimulus remains constant, the perception of spatial grouping cannot be affected by manipulations of the temporal configuration of the stimulus. Our data are inconsistent with this assumption. </p>
    <p style="display:none;" id="Text_16c">
    <span> &#9679; <a href="https://www.pnas.org/doi/full/10.1073/pnas.97.14.8186">Publisher link</a> </span><br>
    <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/GepshteinKubovy_PNAS2000.pdf "> PDF</a> </span><br>
     <hr></div>
    ></div>
+   <div>
+   <!-- </div>  style="border: 1px solid black; padding: 10px;"> -->
+   <font size="1">Updated in July 9, 2024 at 12:09 PM PDT</font>
+  </div>
    </body></html>
-   PublicationsHTML.txt
+
+   

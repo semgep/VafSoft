@@ -11,12 +11,25 @@ header {
   z-index: 1000; /* Убедитесь, что панель поверх всего */
   display: flex;
   align-items: center;
+  /* justify-content: center; */
   justify-content: space-between;
+}
+.header-content {
+  flex-grow: 1; /* Заполнение оставшегося пространства */
+  display: flex;
+  justify-content: center; /* Центрирование содержимого */
+  align-items: center;
+}
+.header-content h3 {
+  margin: 0;
+  /* font-size: 14px; */
+  font: small Calibri;
 }
 .menu-icon,
 .search-icon {
   cursor: pointer;
   font-size: 24px;
+  flex-shrink: 0; /* Предотвращение сжатия иконки меню */
 }
 nav {
   position: fixed;
@@ -29,7 +42,7 @@ nav {
   transform: translateX(-100%); /* Скрываем меню за пределами экрана */
   transition: transform 0.3s ease;
   z-index: 999; /* Убедитесь, что меню над контентом */
-  margin-top: 110px;
+  margin-top: 100px;
 }
 nav ul {
   list-style-type: none;
@@ -99,9 +112,9 @@ nav.show {
   background-color: yellow;
 }
 
-.header h1 {
+/* .header h3 {
   margin: 0;
   font-size: 24px;
   text-align: center;
   flex-grow: 1;
-}
+} */

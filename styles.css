@@ -19,6 +19,7 @@ header {
   display: flex;
   justify-content: center; /* Центрирование содержимого */
   align-items: center;
+  margin-bottom: 20px;
 }
 .header-content h3 {
   margin: 0;

@@ -23,7 +23,7 @@ header {
 .header-content h3 {
   margin: 0;
   /* font-size: 14px; */
-  font: small Calibri;
+  font: medium Calibri;
 }
 .menu-icon,
 .search-icon {

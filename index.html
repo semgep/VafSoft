@@ -1,314 +1,273 @@
-<!DOCTYPE html> <html> 
-   <head>
-      <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Publications</title>
-        <link rel="stylesheet" href="styles.css">
-        <!-- <script src="luxon.min.js" defer></script> -->
-        <script src="scripts.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js" defer></script>
-        <!-- <script src="https://unpkg.com/luxon@3.3.0/build/global/luxon.min.js" defer></script> -->
-   </head> 
-   <!-- <body  onload="console.log(getNow())">  -->
-   <body>   
-      <div id = "Publications" style="border: 1px solid black; padding: 10px; padding-top: 20px; box-sizing: border-box; margin-top: 90px;">
-      <header>
-      <!-- <div class="header"> -->
-         <div class="menu-icon" onclick="toggleMenu()">
-             &#9776; <!-- Это символ меню из трех горизонтальных полос  -->
-        </div>
-        <div class="header-content">
-         <div class="header-row">
-            <h3>Sergei Gepshtein's Portal</h3>
-        </div>
-        <div class="header-second-row">
-            <h3>Publications: a sample</h3>
-        </div>
-            <!-- <h3>Sergei Gepshtein's Portal <br><br> Publications: a sample<br></h3> -->
-         </div>
-         
-         <!-- <div class="search-icon" onclick="toggleSearch()">
-            &#128269; // Символ лупы 
-        </div> -->
-      <!-- </div> -->
-      </header>
-      <nav id="menu" class="hidden">
-         <div class="close-menu" onclick="toggleMenu()">
-             &times;  <!-- Символ крестика  -->
-         </div>
-         <ul>
-            <li><a href="#About">About</a></li>
-            <li><a href="#Publications">Publications</a></li>
-         </ul>
-      </nav>
-      <!-- </header> -->
-      <!-- <div id="search" class="hidden">
-         <input type="text" id="searchInput" placeholder="Search...">
-         <button onclick="searchSite()">Search</button>
-         <button onclick="toggleSearch()">&times;</button>
-     </div> -->
-     <!-- <div id="search" class="hidden">
-      <div class="close-search" onclick="toggleSearch()">
-        &times; // Символ крестика 
-      </div>
-      <input type="text" id="searchInput" placeholder="Search...">
-      <button onclick="searchSite()">Search</button> // Добавьте эту строку 
-    </div> -->
-   <button id="Filter" onclick = "toggleDisplay();"> Filter</button>
-   <button onclick="processSelection()">Apply</button>
-   <span id ="Btns" style = "display:none;">
-   <button id="Hide" onclick = "toggleHide();"> Hide</button>
-   <button id="Clear" onclick = "toggleClear();"> Clear</button>
-   </span>
-   <div id="filterDropdown" style = "display:none; font:small Calibri;"><br>
-   <div style=" display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));background-color: Gainsboro;padding: 7px;">
-   <label><input type="checkbox" value=1>Tags</label>
-   <label><input type="checkbox" value=13,6,7,8>action</label>
-   <label><input type="checkbox" value=2,4>architecture</label>
-   <label><input type="checkbox" value=8>brain</label>
-   <label><input type="checkbox" value=15>cue combination</label>
-   <label><input type="checkbox" value=2>design</label>
-   <label><input type="checkbox" value=11>economics</label>
-   <label><input type="checkbox" value=16>gestalt</label>
-   <label><input type="checkbox" value=15>haptics</label>
-   <label><input type="checkbox" value=15>intersensory</label>
-   <label><input type="checkbox" value=10,11,12>motion</label>
-   <label><input type="checkbox" value=5>neurons</label>
-   <label><input type="checkbox" value=3>neuroscience</label>
-   <label><input type="checkbox" value=11,13,15,8>optimality</label>
-   <label><input type="checkbox" value=11>phenomenology</label>
-   <label><input type="checkbox" value=5>physiology</label>
-   <label><input type="checkbox" value=9>psychology</label>
-   <label><input type="checkbox" value=10,11,12,13,14,15,16,2,3,6,7>psychophysics</label>
-   <label><input type="checkbox" value=10,5>sensitivity</label>
-   <label><input type="checkbox" value=2,4>space</label>
-   <label><input type="checkbox" value=14>stereopsis</label>
-   <label><input type="checkbox" value=3,6>theory</label>
-   <label><input type="checkbox" value=15>touch</label>
-   <label><input type="checkbox" value=11,12,15,16,3>vision</label>
-   </div></div>
-   <div class="content-box" style='font-family:Calibri; border: 1px solid white; padding: 2px;'>
-   <div  style="display:block;" id="Article_2" class = "article">
-   <!-- <div id = "Publications" style="display:block;" id="Article_2" class = "article"> -->
-   <p><font size='3'> <span style='font-weight: bold;'> Perceptual space as a well of possibilities</span><p>  Springer/Nature 2022 </p><p> The meaning of 'space' varies significantly among scientific disciplines (such as physics and neuroscience) and practical professions (such as architecture and design). Here, we seek a unifying property of the various concepts of space, grounded in science and useful for design. </p></p>
-   <button id="Button_2a" onclick="toggle(this);"> [+] Citation</button>
-   <button id="Button_2b" onclick="toggle(this);"> [+] Abstract</button>
-   <button id="Button_2c" onclick="toggle(this);"> [+] Links</button>
-   
-   <p style="display:none;"   id="Text_2a"> 
-   <span><font size='3'> Gepshtein S (2022). Perceptual space as a well of possibilities. <span style="font-style: italic;">Affordances in Everyday Life: A Multidisciplinary Collection of Essays, Springer/Nature </span>  (), 123–137
-   . </font></span>
-   
-   <p style="display:none;"   id="Text_2b"> Everyone seems to know what space is. But the meaning of “space” varies from person to person and from one occasion to another. It varies among the academic disciplines concerned with spatiality, such as physics, psychology and phenomenology, and among practical professions, such as architecture and filmmaking, stage design and creative writing. How can we reconcile this polyphony? Is there an underlying root concept of space? In other words, do these multiple and disparate concepts have a “focal meaning”? One manner of answering these questions is offered here, by considering a moving person who is sequentially exposed to specific possibilities of experience at different spatial locations. Reminiscent of the concept of affordance, the present account is concerned with possibilities of experience, rather than with actual experience, and it is trained on distributed patterns of perception and behavior, rather than on their piecewise characterization. </p>
-   <p style="display:none;" id="Text_2c">
-   <span> &#9679; <a href="https://link.springer.com/chapter/10.1007/978-3-031-08629-8_12">Publisher link</a> </span><br>
-   <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Gepshtein%20-%20Space%20as%20Possibilities%20-%202022.pdf">PDF</a> </span><br>
-    <hr></div>
-   <div style="display:block;" id="Article_3" class = "article">
-   <p><font size='3'> <span style='font-weight: bold;'> Spatially distributed computation in cortical circuits</span><p> Science Advances 2022 </p><p> Neural waves are patterns of neural activation distributed across the brain. Understanding how these waves interact (or interfere) with one another helps to overcome the limitations of the traditional view of brain function. </p></p>
-   <button id="Button_3a" onclick="toggle(this);"> [+] Citation</button>
-   <button id="Button_3b" onclick="toggle(this);"> [+] Abstract</button>
-   <button id="Button_3c" onclick="toggle(this);"> [+] Links</button>
-   
-   <p style="display:none;"   id="Text_3a"> 
-   <span><font size='3'> Gepshtein S, Pawar AS, Kwon S, Savel'ev S, Albright TD (2022). Spatially distributed computation in cortical circuits. <span style="font-style: italic;">Science Advances</span> 8 (16), 1-19. </font></span>
-   
-   <p style="display:none;"   id="Text_3b"> The traditional view of neural computation in the cerebral cortex holds that sensory neurons are specialized, i.e., selective for certain dimensions of sensory stimuli. This view was challenged by evidence of contextual interactions between stimulus dimensions in which a neuron’s response to one dimension strongly depends on other dimensions. Here we use methods of mathematical modeling, psychophysics, and electrophysiology to address shortcomings of the traditional view. Using a model of a generic cortical circuit, we begin with the simple demonstration that cortical responses are always distributed among neurons, forming characteristic waveforms which we call "neural waves." When stimulated by patterned stimuli, circuit responses arise by interference of neural waves. Results of this process depend on interaction between stimulus dimensions. Comparison of modeled responses with responses of biological vision makes it clear that the framework of neural wave interference provides a useful alternative to the standard concept of neural computation. </p>
-   <p style="display:none;" id="Text_3c">
-   <span> &#9679; <a href="https://www.science.org/doi/10.1126/sciadv.abl5865">Publisher link</a> </span><br>
-   <span> &#9679; <a href="https://www.science.org/doi/epdf/10.1126/sciadv.abl5865 "> PDF</a> </span><br>
-    <hr></div>
-   <div style="display:block;" id="Article_4" class = "article">
-   <p><font size='3'> <span style='font-weight: bold;'> Species of space</span><p> Architectural Design 2020 </p><p> In their drawings, architects depict physical containers of space. But aren't they missing a key ingredient of spatial representation, shaped jointly by the environment and the person? </p></p>
-   <button id="Button_4a" onclick="toggle(this);"> [+] Citation</button>
-   <button id="Button_4b" onclick="toggle(this);"> [+] Abstract</button>
-   <button id="Button_4c" onclick="toggle(this);"> [+] Links</button>
-   
-   <p style="display:none;"   id="Text_4a"> 
-   <span><font size='3'> Gepshtein S (2020). Species of space. <span style="font-style: italic;">Architectural Design</span> 90 (6), 36-40. </font></span>
-   
-   <p style="display:none;"   id="Text_4b"> Multiple concepts of space have originated in different arts and sciences, related to one another but also distinct because they are viewed through radically different lenses. In physics and physiology, space is an aspect of the objective reality, couched in terms of metrics and distances. In psychology and phenomenology, space is conceived from the first-person perspective, structured by one’s plans, intentions and affordances. Different yet are the concepts of space entertained by artists and designers: in painting and photography, cinema and architecture, literary criticism and philosophy of art. Here space is “constructed” to support praxis: representing a solid object on a surface, facilitating navigation or analyzing a narrative. In the emerging arena of Neuroscience for Architecture it is important to appreciate differences between these concepts of space, learn about them in their context and then understand how they mix in practice. The author shows how the space of experience is articulated by boundaries that arise from the human body. Although intangible and fluid, these boundaries are nevertheless real and systematic, which is why they readily yield to the methods of science. </p>
-   <p style="display:none;" id="Text_4c">
-   <span> &#9679; <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ad.2629">Publisher link</a> </span><br>
-   <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Gepshtein_AD2020_full.pdf "> PDF</a> </span><br>
-    <hr></div>
-   <div style="display:block;" id="Article_5" class = "article">
-   <p><font size='3'> <span style='font-weight: bold;'> Mechanisms of spatiotemporal selectivity in cortical area MT</span><p> Neuron 2019 </p><p> Cortical sensory neurons were thought to respond selectively to specific stimuli within their receptive fields. Here we show that the concept of stimulus selectivity as a stable property of neurons needs revision. </p></p>
-   <button id="Button_5a" onclick="toggle(this);"> [+] Citation</button>
-   <button id="Button_5b" onclick="toggle(this);"> [+] Abstract</button>
-   <button id="Button_5c" onclick="toggle(this);"> [+] Links</button>
-   
-   <p style="display:none;"   id="Text_5a"> 
-   <span><font size='3'> Pawar AS, Gepshtein S, Savel'ev S, Albright TD (2019). Mechanisms of spatiotemporal selectivity in cortical area MT. <span style="font-style: italic;">Neuron</span> 101 (3), 514-527. </font></span>
-   
-   <p style="display:none;"   id="Text_5b"> Cortical sensory neurons are characterized by selectivity to stimulation. This selectivity was originally viewed as a part of the fundamental "receptive field" characteristic of neurons. This view was later challenged by evidence that receptive fields are modulated by stimuli outside of the classical receptive field.
-        Here we show that even this modified view of selectivity needs revision. We measured spatial frequency selectivity of neurons in cortical area MT of alert monkeys and found that their selectivity strongly depends on luminance contrast, shifting to higher spatial frequencies as contrast increases. The changes of preferred spatial frequency are large at low temporal frequency and they decrease monotonically as temporal frequency increases. That is, even interactions among basic stimulus dimensions of luminance contrast, spatial frequency and temporal frequency strongly influence neuronal selectivity.
-        This dynamic nature of neuronal selectivity is inconsistent with the notion of stimulus preference as a stable characteristic of cortical neurons. </p>
-   <p style="display:none;" id="Text_5c">
-   <span> &#9679; <a href="https://www.cell.com/neuron/fulltext/S0896-6273(18)31078-X">Publisher link</a> </span><br>
-   <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Pawar_etal_Neuron2018.pdf">PDF</a> </span><br>
-    <hr></div>
-   <div style="display:block;" id="Article_6" class = "article">
-   <p><font size='3'> <span style='font-weight: bold;'> Prospective optimization with limited resources</span><p> PLoS Computational Biology 2015 </p><p> Here we study how humans organize behavior prospectively, for multiple future steps, in the dynamic environments that are uncertain: externally (since future events are often unpredictable) and internally (since our ability to foresee the consequences of our own actions is limited). </p></p>
-   <button id="Button_6a" onclick="toggle(this);"> [+] Citation</button>
-   <button id="Button_6b" onclick="toggle(this);"> [+] Abstract</button>
-   <button id="Button_6c" onclick="toggle(this);"> [+] Links</button>
-   
-   <p style="display:none;"   id="Text_6a"> 
-   <span><font size='3'> Snider J, Lee D, Poizner H, Gepshtein S (2015). Prospective optimization with limited resources. <span style="font-style: italic;">PLoS Computational Biology</span> 11 (9), e1004501. </font></span>
-   
-   <p style="display:none;"   id="Text_6b"> The future is uncertain because some forthcoming events are unpredictable and also because our ability to foresee the myriad consequences of our own actions is limited. Here we studied how humans select actions under such extrinsic and intrinsic uncertainty, in view of an exponentially expanding number of prospects on a branching multivalued visual stimulus.
-      A triangular grid of disks of different sizes scrolled down a touchscreen at a variable speed. The larger disks represented larger rewards. The task was to maximize the cumulative reward by touching one disk at a time in a rapid sequence, forming an upward path across the grid, while every step along the path constrained the part of the grid accessible in the future. This task captured some of the complexity of natural behavior in the risky and dynamic world, where ongoing decisions alter the landscape of future rewards. By comparing human behavior with behavior of ideal actors, we identified the strategies used by humans in terms of how far into the future they looked (their "depth of computation") and how often they attempted to incorporate new information about the future rewards (their "recalculation period").
-      We found that, for a given task difficulty, humans traded off their depth of computation for the recalculation period. The form of this tradeoff was consistent with a complete, brute-force exploration of all possible paths up to a resource-limited finite depth. A step-by-step analysis of the human behavior revealed that participants took into account very fine distinctions between the future rewards and that they abstained from some simple heuristics in assessment of the alternative paths, such as seeking only the largest disks or avoiding the smaller disks. The participants preferred to reduce their depth of computation or increase the recalculation period rather than sacrifice the precision of computation. </p>
-   <p style="display:none;" id="Text_6c">
-   <span> &#9679; <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004501">Publisher link</a> </span><br>
-   <span> &#9679; <a href="https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1004501&type=printable "> PDF</a> </span><br>
-    <hr></div>
-   <div style="display:block;" id="Article_7" class = "article">
-   <p><font size='3'> <span style='font-weight: bold;'> Dopamine function and the efficiency of human movement</span><p> Journal of Cognitive Neuroscience 2014 </p><p> To sustain successful behavior in dynamic environments, organisms must learn from their actions and predict action outcomes. Dopamine plays a key role in this process, encoding differences between expected and actual outcomes. A study on Parkinson's disease patients with dopamine depletion showed that while they performed well in low-energy tasks, their performance declined significantly in high-energy tasks, highlighting dopamine's role in mediating the energy cost of action and efficient planning. </p></p>
-   <button id="Button_7a" onclick="toggle(this);"> [+] Citation</button>
-   <button id="Button_7b" onclick="toggle(this);"> [+] Abstract</button>
-   <button id="Button_7c" onclick="toggle(this);"> [+] Links</button>
-   
-   <p style="display:none;"   id="Text_7a"> 
-   <span><font size='3'> Gepshtein S, Li X, Snider J, Plank M, Lee D & Poizner H (2014). Dopamine function and the efficiency of human movement. <span style="font-style: italic;">Journal of Cognitive Neuroscience</span> 26 (3), 645-657. </font></span>
-   
-   <p style="display:none;"   id="Text_7b"> To sustain successful behavior in dynamic environments, active organisms must be able to learn from the consequences of their actions and predict action outcomes. One of the most important discoveries in systems neuroscience over the last 15 years has been about the key role of the neurotransmitter dopamine in mediating such active behavior. Dopamine cell firing was found to encode differences between the expected and obtained outcomes of actions. Although activity of dopamine cells does not specify movements themselves, a recent study in humans has suggested that tonic levels of dopamine in the dorsal striatum may in part enable normal movement by encoding sensitivity to the energy cost of a movement, providing an implicit “motor motivational” signal for movement. We investigated the motivational hypothesis of dopamine by studying motor performance of patients with Parkinson disease who have marked dopamine depletion in the dorsal striatum and compared their performance with that of elderly healthy adults. All participants performed rapid sequential movements to visual targets associated with different risk and different energy costs, countered or assisted by gravity. In conditions of low energy cost, patients performed surprisingly well, similar to prescriptions of an ideal planner and healthy participants. As energy costs increased, however, performance of patients with Parkinson disease dropped markedly below the prescriptions for action by an ideal planner and below performance of healthy elderly participants. The results indicate that the ability for efficient planning depends on the energy cost of action and that the effect of energy cost on action is mediated by dopamine. </p>
-   <p style="display:none;" id="Text_7c">
-   <span> &#9679; <a href="https://direct.mit.edu/jocn/article-abstract/26/3/645/28076/Dopamine-Function-and-the-Efficiency-of-Human">Publisher link</a> </span><br>
-   <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Gepshtein_etal_JoCN2014.pdf">PDF</a> </span><br>
-    <hr></div>
-   <div style="display:block;" id="Article_8" class = "article">
-   <p><font size='3'> <span style='font-weight: bold;'> Prospective optimization</span><p> Proceedings of the IEEE 2014 </p><p> Human performance in perceptual and motor tasks can approach that of an ideal observer and optimal actor, relying on the brain's capacity for flexible information storage and rapid decision-making. These abilities develop through long-term learning involving interactions between the cerebral cortex and the basal ganglia. Insights into brain algorithms for reinforcement learning and prospective optimization have implications for the development of autonomous devices. </p></p>
-   <button id="Button_8a" onclick="toggle(this);"> [+] Citation</button>
-   <button id="Button_8b" onclick="toggle(this);"> [+] Abstract</button>
-   <button id="Button_8c" onclick="toggle(this);"> [+] Links</button>
-   
-   <p style="display:none;"   id="Text_8a"> 
-   <span><font size='3'> Sejnowski TJ, Poizner H, Lynch G, Gepshtein S & Greenspan RJ  (2014). Prospective optimization. <span style="font-style: italic;">Proceedings of the IEEE</span> 102 (5), 799-811. </font></span>
-   
-   <p style="display:none;"   id="Text_8b"> Human performance approaches that of an ideal observer and optimal actor in some perceptual and motor tasks. These optimal abilities depend on the capacity of the cerebral cortex to store an immense amount of information and to flexibly make rapid decisions. However, behavior only approaches these limits after a long period of learning while the cerebral cortex interacts with the basal ganglia, an ancient part of the vertebrate brain that is responsible for learning sequences of actions directed toward achieving goals. Progress has been made in understanding the algorithms used by the brain during reinforcement learning, which is an online approximation of dynamic programming. Humans also make plans that depend on past experience by simulating different scenarios, which is called prospective optimization. The same brain structures in the cortex and basal ganglia that are active online during optimal behavior are also active offline during prospective optimization. The emergence of general principles and algorithms for goal-directed behavior has consequences for the development of autonomous devices in engineering applications. </p>
-   <p style="display:none;" id="Text_8c">
-   <span> &#9679; <a href="https://ieeexplore.ieee.org/document/6803897">Publisher link</a> </span><br>
-   <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Sejnowski_et_al_IEEE2014.pdf">PDF</a> </span><br>
-    <hr></div>
-   <div style="display:block;" id="Article_9" class = "article">
-   <p><font size='3'> <span style='font-weight: bold;'> Visual perception: Theoretical and methodological foundations</span><p>  Handbook of Psychology, John Wiley & Sons 2013 </p><p> This chapter contains three tutorial overviews of theoretical and methodological ideas that are important to students of visual perception. From the vast scope of the material we could have covered, we have chosen a small set of topics that form the foundations of vision research. </p></p>
-   <button id="Button_9a" onclick="toggle(this);"> [+] Citation</button>
-   <button id="Button_9b" onclick="toggle(this);"> [+] Abstract</button>
-   <button id="Button_9c" onclick="toggle(this);"> [+] Links</button>
-   
-   <p style="display:none;"   id="Text_9a"> 
-   <span><font size='3'> Kubovy M, Epstein W, Gepshtein S (2013). Visual perception: Theoretical and methodological foundations. <span style="font-style: italic;">In Healy AF & Proctor RW (Eds), Experimental Psychology, 2ed, Vol. 4 in Weiner IB (Editor-in-Chief) Handbook of Psychology. John Wiley & Sons, New York, USA. </span>  (), 85-119. </font></span>
-   
-   <p style="display:none;"   id="Text_9b"> First, we provide a sketch of the theoretical foundations of our field. We lay out four major research programs (in the past they might have been called “schools”), and then discuss how they address eight foundational questions that promise to occupy our discipline for many years to come. Second, we discuss psychophysics, which offers indispensable tools for the researcher. Here we lead the reader from the idea of threshold to the tools of signal detection theory. To illustrate our presentation of methodology, we have not focused on the classics that appear in much of the secondary literature. Rather, we have chosen recent research that showcases the current practice in the field, and the applicability of these methods to a wide range of problems. The contemporary view of perception maintains that perceptual theory requires an understanding of our environment as well as the perceiver. That is why, in the third section, we ask what are the regularities of the environment, how may they be discovered, and to what extent do perceivers use them. Here, too, we use recent research to exemplify this approach. </p>
-   <p style="display:none;" id="Text_9c">
-   <span> &#9679; <a href="https://www.wiley.com/en-us/Handbook+of+Psychology%2C+Volume+4%2C+Experimental+Psychology%2C+2nd+Edition-p-9781118281949">Publisher link</a> </span><br>
-   <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Kubovy_Epstein_Gepshtein_Wiley2e_2013.pdf">PDF</a> </span><br>
-    <hr></div>
-   <div style="display:block;" id="Article_10" class = "article">
-   <p><font size='3'> <span style='font-weight: bold;'> Sensory adaptation as optimal resource allocation</span><p>  PNAS 2013 </p><p> Visual adaptation is expected to improve performance in new environments, but sometimes it hinders performance. We explain this paradox with an economic process that allocates limited neural resources optimally. </p></p>
-   <button id="Button_10a" onclick="toggle(this);"> [+] Citation</button>
-   <button id="Button_10b" onclick="toggle(this);"> [+] Abstract</button>
-   <button id="Button_10c" onclick="toggle(this);"> [+] Links</button>
-   
-   <p style="display:none;"   id="Text_10a"> 
-   <span><font size='3'> Gepshtein S, Lesmes LA, Albright TD (2013). Sensory adaptation as optimal resource allocation. <span style="font-style: italic;">Proceedings of the National Academy of Sciences, USA </span> 110 (11), 4368-4373. </font></span>
-   
-   <p style="display:none;"   id="Text_10b"> Visual adaptation is expected to improve visual performance in the new environment. This expectation has been contradicted by evidence that adaptation sometimes decreases sensitivity for the adapting stimuli, and sometimes it changes sensitivity for stimuli very different from the adapting ones. We hypothesize that this pattern of results can be explained by a process that optimizes sensitivity for many stimuli, rather than changing sensitivity only for those stimuli whose statistics have changed. To test this hypothesis, we measured visual sensitivity across a broad range of spatiotemporal modulations of luminance, while varying the distribution of stimulus speeds. The manipulation of stimulus statistics caused a large-scale reorganization of visual sensitivity, forming the orderly pattern of sensitivity gains and losses. This pattern is predicted by a theory of distribution of receptive field characteristics in the visual system. </p>
-   <p style="display:none;" id="Text_10c">
-   <span> &#9679; <a href="https://www.pnas.org/doi/full/10.1073/pnas.1204109110">Publisher link</a> </span><br>
-   <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Gepshtein_etal_PNAS2013.pdf">PDF</a> </span><br>
-    <hr></div>
-   <div style="display:block;" id="Article_11" class = "article">
-   <p><font size='3'> <span style='font-weight: bold;'> Two psychologies of perception and the prospect of their synthesis</span><p> Philosophical Psychology 2010 </p><p> Two traditions, the statistical and the phenomenological, have greatly influenced research of perception, respectively in sensory psychophysics and Gestalt psychology. Here we consider an approach that may reconcile these two traditions. </p></p>
-   <button id="Button_11a" onclick="toggle(this);"> [+] Citation</button>
-   <button id="Button_11b" onclick="toggle(this);"> [+] Abstract</button>
-   <button id="Button_11c" onclick="toggle(this);"> [+] Links</button>
-   
-   <p style="display:none;"   id="Text_11a"> 
-   <span><font size='3'> Gepshtein S (2010). Two psychologies of perception and the prospect of their synthesis. <span style="font-style: italic;">Philosophical Psychology</span> 23 (2), 217-281. </font></span>
-   
-   <p style="display:none;"   id="Text_11b"> Two traditions have had a great impact on the theoretical and experimental research of perception. One tradition is statistical, stretching from Fechner's enunciation of psychophysics in 1860 to the modern view of perception as statistical decision making. The other tradition is phenomenological, from Brentano's “empirical standpoint” of 1874 to the Gestalt movement and the modern work on perceptual organization. Each tradition has at its core a distinctive assumption about the indivisible constituents of perception: the just-noticeable differences of sensation in the tradition of Fechner vs. the phenomenological Gestalts in the tradition of Brentano. But some key results from the two traditions can be explained and connected using an approach that is neither statistical nor phenomenological. This approach rests on a basic property of any information exchange: a principle of measurement formulated in 1946 by Gabor as a part of his quantal theory of information. Here the indivisible components are units (quanta) of information that remain invariant under changes of precision of measurement. This approach helped to understand how sensory measurements are implemented by single neural cells. But recent analyses suggest that this approach has the power to explain larger-scale characteristics of sensory systems. </p>
-   <p style="display:none;" id="Text_11c">
-   <span> &#9679; <a href="https://www.tandfonline.com/doi/full/10.1080/09515081003727483">Publisher link</a> </span><br>
-   <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Gepshtein_TwoPsychologies_2010.pdf">PDF</a> </span><br>
-    <hr></div>
-   <div style="display:block;" id="Article_12" class = "article">
-   <p><font size='3'> <span style='font-weight: bold;'> The lawful perception of apparent motion</span><p> Journal of Vision 2007 </p><p> The study resolved a controversy on how spatial and temporal distances affect the strength of visual apparent motion. </p></p>
-   <button id="Button_12a" onclick="toggle(this);"> [+] Citation</button>
-   <button id="Button_12b" onclick="toggle(this);"> [+] Abstract</button>
-   <button id="Button_12c" onclick="toggle(this);"> [+] Links</button>
-   
-   <p style="display:none;"   id="Text_12a"> 
-   <span><font size='3'> Gepshtein S, Kubovy M (2007). The lawful perception of apparent motion. <span style="font-style: italic;">Journal of Vision</span> 7 (8:9), 1-15. </font></span>
-   
-   <p style="display:none;"   id="Text_12b"> Visual apparent motion is the experience of motion from the successive stimulation of separate spatial locations. How spatial and temporal distances interact to determine the strength of apparent motion has been controversial. Some studies report space-time coupling: If we increase spatial or temporal distance between successive stimuli, we must also increase the other distance between them to maintain a constant strength of apparent motion (Korte's third law of motion). Other studies report space-time tradeoff: If we increase one of these distances, we must decrease the other to maintain a constant strength of apparent motion. In this article, we resolve the controversy. Starting from a normative theory of motion measurement and data on human spatiotemporal sensitivity, we conjecture that both coupling and tradeoff should occur, but at different speeds. We confirm the prediction in two experiments, using suprathreshold multistable apparent-motion displays called motion lattices. Our results show a smooth transition between the tradeoff and coupling as a function of speed: Tradeoff occurs at low speeds and coupling occurs at high speeds. From our data, we reconstruct the suprathreshold equivalence contours that are analogous to isosensitivity contours obtained at the threshold of visibility. </p>
-   <p style="display:none;" id="Text_12c">
-   <span> &#9679; <a href="https://jov.arvojournals.org/article.aspx?articleid=2122193">Publisher link</a> </span><br>
-   <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/GepshteinKubovy_jov2007.pdf">PDF</a> </span><br>
-    <hr></div>
-   <div style="display:block;" id="Article_13" class = "article">
-   <p><font size='3'> <span style='font-weight: bold;'> Optimal compensation for changes in task relevant movement variability</span><p> Journal of Neuroscience 2005 </p><p> This work showed that humans can quickly estimate variability of their own movements and adjust their actions accordingly, demonstrating behavior consistent with an optimal planner of movement. </p></p>
-   <button id="Button_13a" onclick="toggle(this);"> [+] Citation</button>
-   <button id="Button_13b" onclick="toggle(this);"> [+] Abstract</button>
-   <button id="Button_13c" onclick="toggle(this);"> [+] Links</button>
-   
-   <p style="display:none;"   id="Text_13a"> 
-   <span><font size='3'> Trommershäuser J, Gepshtein S, Maloney LT, Landy MS & Banks MS (2005). Optimal compensation for changes in task relevant movement variability. <span style="font-style: italic;">Journal of Neuroscience</span> 25 (31), 7169-7178. </font></span>
-   
-   <p style="display:none;"   id="Text_13b"> Effective movement planning should take into account the consequences of possible errors in executing a planned movement. These errors can result from either sensory uncertainty or variability in movement planning and production. We examined the ability of humans to compensate for variability in sensory estimation and movement production under conditions in which variability is increased artificially by the experimenter. Subjects rapidly pointed at a target region that had an adjacent penalty region. Target and penalty hits yielded monetary rewards and losses. We manipulated the task-relevant variability by perturbing visual feedback of finger position during the movement. The feedback was shifted in a random direction with a random amplitude in each trial, causing an increase in the task-relevant variability. Subjects were unable to counteract this form of perturbation. Rewards and penalties were based on the perturbed, visually specified finger position. Subjects rapidly acquired an estimate of their new variability in <120 trials and adjusted their aim points accordingly. We compared subjects' performance to the performance of an optimal movement planner maximizing expected gain. Their performance was consistent with that expected from an optimal movement planner that perfectly compensated for externally imposed changes in task-relevant variability. When exposed to novel stimulus configurations, aim points shifted in the first trial without showing any detectable trend across trials. These results indicate that subjects are capable of changing their pointing strategy in the presence of externally imposed noise. Furthermore, they manage to update their estimate of task-relevant variability and to transfer this estimate to novel stimulus configurations. </p>
-   <p style="display:none;" id="Text_13c">
-   <span> &#9679; <a href="https://www.jneurosci.org/content/25/31/7169">Publisher link</a> </span><br>
-   <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/TGMLB_JNeurosci2005.pdf">PDF</a> </span><br>
-    <hr></div>
-   <div style="display:block;" id="Article_14" class = "article">
-   <p><font size='3'> <span style='font-weight: bold;'> Why is spatial stereoresolution so low?</span><p> Journal of Neuroscience 2004 </p><p> This study asked why stereoscopic perception has much poorer spatial resolution than the perception of luminance patterns. (Stereoscopic vision depends on subtle differences in the views of two eyes.) We identified several key factors: computational and biological. </p></p>
-   <button id="Button_14a" onclick="toggle(this);"> [+] Citation</button>
-   <button id="Button_14b" onclick="toggle(this);"> [+] Abstract</button>
-   <button id="Button_14c" onclick="toggle(this);"> [+] Links</button>
-   
-   <p style="display:none;"   id="Text_14a"> 
-   <span><font size='3'> Banks MS, Gepshtein S & Landy MS (2004). Why is spatial stereoresolution so low?. <span style="font-style: italic;">Journal of Neuroscience</span> 24 (9), 2077-2089. </font></span>
-   
-   <p style="display:none;"   id="Text_14b"> Spatial stereoresolution (the finest detectable modulation of binocular disparity) is much poorer than luminance resolution (finest detectable luminance variation). In a series of psychophysical experiments, we examined four factors that could cause low stereoresolution: (1) the sampling properties of the stimulus, (2) the disparity gradient limit, (3) low-pass spatial filtering by mechanisms early in the visual process, and (4) the method by which binocular matches are computed. Our experimental results reveal the contributions of the first three factors. A theoretical analysis of binocular matching by interocular correlation reveals the contribution of the fourth: the highest attainable stereoresolution may be limited by (1) the smallest useful correlation window in the visual system, and (2) a matching process that estimates the disparity of image patches and assumes that disparity is constant across the patch. Both properties are observed in disparity-selective neurons in area V1 of the primate. </p>
-   <p style="display:none;" id="Text_14c">
-   <span> &#9679; <a href="https://www.jneurosci.org/content/24/9/2077">Publisher link</a> </span><br>
-   <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/BGL_JNeurosci2004.pdf">PDF</a> </span><br>
-    <hr></div>
-   <div style="display:block;" id="Article_15" class = "article">
-   <p><font size='3'> <span style='font-weight: bold;'> Viewing geometry determines how vision and touch combine in size perception</span><p> Current Biology 2003 </p><p> The visual and haptic senses provide information differently. When both are used, humans integrate these senses flexibly, resulting in a more precise judgment of object size than using either sense alone. </p></p>
-   <button id="Button_15a" onclick="toggle(this);"> [+] Citation</button>
-   <button id="Button_15b" onclick="toggle(this);"> [+] Abstract</button>
-   <button id="Button_15c" onclick="toggle(this);"> [+] Links</button>
-   
-   <p style="display:none;"   id="Text_15a"> 
-   <span><font size='3'> Gepshtein S, Banks MS  (2003). Viewing geometry determines how vision and touch combine in size perception. <span style="font-style: italic;">Current Biology</span> 13 (6), 483-488. </font></span>
-   
-   <p style="display:none;"   id="Text_15b"> Vision and haptics have different limitations and advantages because they obtain information by different methods. If the brain combined information from the two senses optimally, it would rely more on the one providing more precise information for the current task. In this study, human observers judged the distance between two parallel surfaces in two within-modality experiments (vision-alone and haptics-alone) and in an intermodality experiment (vision and haptics together). In the within-modality experiments, the precision of visual estimates varied with surface orientation, as expected from geometric considerations; the precision of haptic estimates did not. An ideal observer that combines visual and haptic information weights them differently as a function of orientation. In the intermodality experiment, humans adjusted visual and haptic weights in a fashion quite similar to that of the ideal observer. As a result, combined size estimates are finer than is possible with either vision or haptics alone; indeed, they approach statistical optimality. </p>
-   <p style="display:none;" id="Text_15c">
-   <span> &#9679; <a href="https://www.sciencedirect.com/science/article/pii/S0960982203001337">Publisher link</a> </span><br>
-   <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/GepshteinBanks_CurBio2003.pdf">PDF</a> </span><br>
-    <hr></div>
-   <div  style="display:block;" id="Article_16" class = "article">
-   <p><font size='3'> <span style='font-weight: bold;'> The emergence of visual objects in space-time</span><p>  PNAS 2000 </p><p> What we perceive as an object depends on whether its parts connect across time as separate elements or they combine into a spatially extended entity that persists in time. </p></p>
-   <button id="Button_16a" onclick="toggle(this);"> [+] Citation</button>
-   <button id="Button_16b" onclick="toggle(this);"> [+] Abstract</button>
-   <button id="Button_16c" onclick="toggle(this);"> [+] Links</button>
-   
-   <p style="display:none;"   id="Text_16a"> 
-   <span><font size='3'> Gepshtein S, Kubovy M (2000). The emergence of visual objects in space-time. <span style="font-style: italic;">Proceedings of the National Academy of Sciences, USA </span> 97 (14), 8186-8191. </font></span>
-   
-   <p style="display:none;"   id="Text_16b"> It is natural to think that in perceiving dynamic scenes, vision takes a series of snapshots. Motion perception can ensue when the snapshots are different. The snapshot metaphor suggests two questions: (i) How does the visual system put together elements within each snapshot to form objects? This is the spatial grouping problem. (ii) When the snapshots are different, how does the visual system know which element in one snapshot corresponds to which element in the next? This is the temporal grouping problem. The snapshot metaphor is a caricature of the dominant model in the field—the sequential model—according to which spatial and temporal grouping are independent. The model we propose here is an interactive model, according to which the two grouping mechanisms are not separable. Currently, the experiments that support the interactive model are not conclusive because they use stimuli that are excessively specialized. To overcome this weakness, we created a new type of stimulus—spatiotemporal dot lattices—which allow us to independently manipulate the strength of spatial and temporal groupings. For these stimuli, sequential models make one fundamental assumption: if the spatial configuration of the stimulus remains constant, the perception of spatial grouping cannot be affected by manipulations of the temporal configuration of the stimulus. Our data are inconsistent with this assumption. </p>
-   <p style="display:none;" id="Text_16c">
-   <span> &#9679; <a href="https://www.pnas.org/doi/full/10.1073/pnas.97.14.8186">Publisher link</a> </span><br>
-   <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/GepshteinKubovy_PNAS2000.pdf "> PDF</a> </span><br>
-    <hr></div>
-   ></div>
-   <div>
-   <!-- </div>  style="border: 1px solid black; padding: 10px;"> -->
-   <font size="1">Updated in July 9, 2024 at 12:09 PM PDT</font>
-  </div>
-   </body></html>
 
-   
+ <!DOCTYPE html> <html> <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Publications</title>
+ <link rel="stylesheet" href="styles.css">
+ <script src="scripts.js"></script>
+ </head> 
+ <body> 
+
+ <div id = "Publications" style="border: 1px solid black; padding: 10px; padding-top: 20px; box-sizing: border-box; margin-top: 90px;">
+ <header>
+<div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+ <div class="header-content"><div class="header-row"><h3>Sergei Gepshtein's Portal</h3></div>
+ <div class="header-second-row"> <h3>Publications: a sample</h3> </div></div> </header>
+<nav id="menu" class="hidden"><div class="close-menu" onclick="toggleMenu()">&times;</div>
+<ul> <li><a href="#About">About</a></li> <li><a href="#Publications">Publications</a></li> </ul> </nav>
+<span>
+<button id="Filter" onclick = "toggleDisplay();"> Filter</button>
+<button onclick="processSelection()">Apply</button>
+<span id ="Btns" style = "display:none;">
+<button id="Hide" onclick = "toggleHide();"> Hide</button>
+<button id="Clear" onclick = "toggleClear();"> Clear</button>
+</span>
+</span>
+<div id="filterDropdown" style = "display:none; font:small Calibri;"><br>
+<div style=" display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));background-color: Gainsboro;padding: 7px;">
+<label><input type="checkbox" value=1>Tags</label>
+<label><input type="checkbox" value=13,6,7,8>action</label>
+<label><input type="checkbox" value=2,4>architecture</label>
+<label><input type="checkbox" value=8>brain</label>
+<label><input type="checkbox" value=15>cue combination</label>
+<label><input type="checkbox" value=2>design</label>
+<label><input type="checkbox" value=11>economics</label>
+<label><input type="checkbox" value=16>gestalt</label>
+<label><input type="checkbox" value=15>haptics</label>
+<label><input type="checkbox" value=15>intersensory</label>
+<label><input type="checkbox" value=10,11,12>motion</label>
+<label><input type="checkbox" value=5>neurons</label>
+<label><input type="checkbox" value=3>neuroscience</label>
+<label><input type="checkbox" value=11,13,15,8>optimality</label>
+<label><input type="checkbox" value=11>phenomenology</label>
+<label><input type="checkbox" value=5>physiology</label>
+<label><input type="checkbox" value=9>psychology</label>
+<label><input type="checkbox" value=10,11,12,13,14,15,16,2,3,6,7>psychophysics</label>
+<label><input type="checkbox" value=10,5>sensitivity</label>
+<label><input type="checkbox" value=2,4>space</label>
+<label><input type="checkbox" value=14>stereopsis</label>
+<label><input type="checkbox" value=3,6>theory</label>
+<label><input type="checkbox" value=15>touch</label>
+<label><input type="checkbox" value=11,12,15,16,3>vision</label>
+</div></div>
+<div style='font-family:Calibri; border: 1px solid white; padding: 2px;'>
+<div style="display:block;" id="Article_2" class = "article">
+<p><font size='3'> <span style='font-weight: bold;'> Perceptual space as a well of possibilities</span><p>  Springer/Nature 2022 </p><p> The meaning of 'space' varies significantly among scientific disciplines (such as physics and neuroscience) and practical professions (such as architecture and design). Here, we seek a unifying property of the various concepts of space, grounded in science and useful for design. </p></p>
+<button id="Button_2a" onclick="toggle(this);"> [+] Citation</button>
+<button id="Button_2b" onclick="toggle(this);"> [+] Abstract</button>
+<button id="Button_2c" onclick="toggle(this);"> [+] Links</button>
+
+<p style="display:none;"   id="Text_2a"> 
+<span><font size='3'> Gepshtein S (2022). Perceptual space as a well of possibilities. <span style="font-style: italic;">Affordances in Everyday Life: A Multidisciplinary Collection of Essays, Springer/Nature </span>  (), 123–137
+. </font></span>
+
+<p style="display:none;"   id="Text_2b"> Everyone seems to know what space is. But the meaning of “space” varies from person to person and from one occasion to another. It varies among the academic disciplines concerned with spatiality, such as physics, psychology and phenomenology, and among practical professions, such as architecture and filmmaking, stage design and creative writing. How can we reconcile this polyphony? Is there an underlying root concept of space? In other words, do these multiple and disparate concepts have a “focal meaning”? One manner of answering these questions is offered here, by considering a moving person who is sequentially exposed to specific possibilities of experience at different spatial locations. Reminiscent of the concept of affordance, the present account is concerned with possibilities of experience, rather than with actual experience, and it is trained on distributed patterns of perception and behavior, rather than on their piecewise characterization. </p>
+<p style="display:none;" id="Text_2c">
+<span> &#9679; <a href="https://link.springer.com/chapter/10.1007/978-3-031-08629-8_12">Publisher link</a> </span><br>
+<span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Gepshtein%20-%20Space%20as%20Possibilities%20-%202022.pdf">PDF</a> </span><br>
+ <hr></div>
+<div style="display:block;" id="Article_3" class = "article">
+<p><font size='3'> <span style='font-weight: bold;'> Spatially distributed computation in cortical circuits</span><p> Science Advances 2022 </p><p> Neural waves are patterns of neural activation distributed across the brain. Understanding how these waves interact (or interfere) with one another helps to overcome the limitations of the traditional view of brain function. </p></p>
+<button id="Button_3a" onclick="toggle(this);"> [+] Citation</button>
+<button id="Button_3b" onclick="toggle(this);"> [+] Abstract</button>
+<button id="Button_3c" onclick="toggle(this);"> [+] Links</button>
+
+<p style="display:none;"   id="Text_3a"> 
+<span><font size='3'> Gepshtein S, Pawar AS, Kwon S, Savel'ev S, Albright TD (2022). Spatially distributed computation in cortical circuits. <span style="font-style: italic;">Science Advances</span> 8 (16), 1-19. </font></span>
+
+<p style="display:none;"   id="Text_3b"> The traditional view of neural computation in the cerebral cortex holds that sensory neurons are specialized, i.e., selective for certain dimensions of sensory stimuli. This view was challenged by evidence of contextual interactions between stimulus dimensions in which a neuron’s response to one dimension strongly depends on other dimensions. Here we use methods of mathematical modeling, psychophysics, and electrophysiology to address shortcomings of the traditional view. Using a model of a generic cortical circuit, we begin with the simple demonstration that cortical responses are always distributed among neurons, forming characteristic waveforms which we call "neural waves." When stimulated by patterned stimuli, circuit responses arise by interference of neural waves. Results of this process depend on interaction between stimulus dimensions. Comparison of modeled responses with responses of biological vision makes it clear that the framework of neural wave interference provides a useful alternative to the standard concept of neural computation. </p>
+<p style="display:none;" id="Text_3c">
+<span> &#9679; <a href="https://www.science.org/doi/10.1126/sciadv.abl5865">Publisher link</a> </span><br>
+<span> &#9679; <a href="https://www.science.org/doi/epdf/10.1126/sciadv.abl5865 "> PDF</a> </span><br>
+ <hr></div>
+<div style="display:block;" id="Article_4" class = "article">
+<p><font size='3'> <span style='font-weight: bold;'> Species of space</span><p> Architectural Design 2020 </p><p> In their drawings, architects depict physical containers of space. But aren't they missing a key ingredient of spatial representation, shaped jointly by the environment and the person? </p></p>
+<button id="Button_4a" onclick="toggle(this);"> [+] Citation</button>
+<button id="Button_4b" onclick="toggle(this);"> [+] Abstract</button>
+<button id="Button_4c" onclick="toggle(this);"> [+] Links</button>
+
+<p style="display:none;"   id="Text_4a"> 
+<span><font size='3'> Gepshtein S (2020). Species of space. <span style="font-style: italic;">Architectural Design</span> 90 (6), 36-40. </font></span>
+
+<p style="display:none;"   id="Text_4b"> Multiple concepts of space have originated in different arts and sciences, related to one another but also distinct because they are viewed through radically different lenses. In physics and physiology, space is an aspect of the objective reality, couched in terms of metrics and distances. In psychology and phenomenology, space is conceived from the first-person perspective, structured by one’s plans, intentions and affordances. Different yet are the concepts of space entertained by artists and designers: in painting and photography, cinema and architecture, literary criticism and philosophy of art. Here space is “constructed” to support praxis: representing a solid object on a surface, facilitating navigation or analyzing a narrative. In the emerging arena of Neuroscience for Architecture it is important to appreciate differences between these concepts of space, learn about them in their context and then understand how they mix in practice. The author shows how the space of experience is articulated by boundaries that arise from the human body. Although intangible and fluid, these boundaries are nevertheless real and systematic, which is why they readily yield to the methods of science. </p>
+<p style="display:none;" id="Text_4c">
+<span> &#9679; <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ad.2629">Publisher link</a> </span><br>
+<span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Gepshtein_AD2020_full.pdf "> PDF</a> </span><br>
+ <hr></div>
+<div style="display:block;" id="Article_5" class = "article">
+<p><font size='3'> <span style='font-weight: bold;'> Mechanisms of spatiotemporal selectivity in cortical area MT</span><p> Neuron 2019 </p><p> Cortical sensory neurons were thought to respond selectively to specific stimuli within their receptive fields. Here we show that the concept of stimulus selectivity as a stable property of neurons needs revision. </p></p>
+<button id="Button_5a" onclick="toggle(this);"> [+] Citation</button>
+<button id="Button_5b" onclick="toggle(this);"> [+] Abstract</button>
+<button id="Button_5c" onclick="toggle(this);"> [+] Links</button>
+
+<p style="display:none;"   id="Text_5a"> 
+<span><font size='3'> Pawar AS, Gepshtein S, Savel'ev S, Albright TD (2019). Mechanisms of spatiotemporal selectivity in cortical area MT. <span style="font-style: italic;">Neuron</span> 101 (3), 514-527. </font></span>
+
+<p style="display:none;"   id="Text_5b"> Cortical sensory neurons are characterized by selectivity to stimulation. This selectivity was originally viewed as a part of the fundamental "receptive field" characteristic of neurons. This view was later challenged by evidence that receptive fields are modulated by stimuli outside of the classical receptive field.
+     Here we show that even this modified view of selectivity needs revision. We measured spatial frequency selectivity of neurons in cortical area MT of alert monkeys and found that their selectivity strongly depends on luminance contrast, shifting to higher spatial frequencies as contrast increases. The changes of preferred spatial frequency are large at low temporal frequency and they decrease monotonically as temporal frequency increases. That is, even interactions among basic stimulus dimensions of luminance contrast, spatial frequency and temporal frequency strongly influence neuronal selectivity.
+     This dynamic nature of neuronal selectivity is inconsistent with the notion of stimulus preference as a stable characteristic of cortical neurons. </p>
+<p style="display:none;" id="Text_5c">
+<span> &#9679; <a href="https://www.cell.com/neuron/fulltext/S0896-6273(18)31078-X">Publisher link</a> </span><br>
+<span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Pawar_etal_Neuron2018.pdf">PDF</a> </span><br>
+ <hr></div>
+<div style="display:block;" id="Article_6" class = "article">
+<p><font size='3'> <span style='font-weight: bold;'> Prospective optimization with limited resources</span><p> PLoS Computational Biology 2015 </p><p> Here we study how humans organize behavior prospectively, for multiple future steps, in the dynamic environments that are uncertain: externally (since future events are often unpredictable) and internally (since our ability to foresee the consequences of our own actions is limited). </p></p>
+<button id="Button_6a" onclick="toggle(this);"> [+] Citation</button>
+<button id="Button_6b" onclick="toggle(this);"> [+] Abstract</button>
+<button id="Button_6c" onclick="toggle(this);"> [+] Links</button>
+
+<p style="display:none;"   id="Text_6a"> 
+<span><font size='3'> Snider J, Lee D, Poizner H, Gepshtein S (2015). Prospective optimization with limited resources. <span style="font-style: italic;">PLoS Computational Biology</span> 11 (9), e1004501. </font></span>
+
+<p style="display:none;"   id="Text_6b"> The future is uncertain because some forthcoming events are unpredictable and also because our ability to foresee the myriad consequences of our own actions is limited. Here we studied how humans select actions under such extrinsic and intrinsic uncertainty, in view of an exponentially expanding number of prospects on a branching multivalued visual stimulus.
+   A triangular grid of disks of different sizes scrolled down a touchscreen at a variable speed. The larger disks represented larger rewards. The task was to maximize the cumulative reward by touching one disk at a time in a rapid sequence, forming an upward path across the grid, while every step along the path constrained the part of the grid accessible in the future. This task captured some of the complexity of natural behavior in the risky and dynamic world, where ongoing decisions alter the landscape of future rewards. By comparing human behavior with behavior of ideal actors, we identified the strategies used by humans in terms of how far into the future they looked (their "depth of computation") and how often they attempted to incorporate new information about the future rewards (their "recalculation period").
+   We found that, for a given task difficulty, humans traded off their depth of computation for the recalculation period. The form of this tradeoff was consistent with a complete, brute-force exploration of all possible paths up to a resource-limited finite depth. A step-by-step analysis of the human behavior revealed that participants took into account very fine distinctions between the future rewards and that they abstained from some simple heuristics in assessment of the alternative paths, such as seeking only the largest disks or avoiding the smaller disks. The participants preferred to reduce their depth of computation or increase the recalculation period rather than sacrifice the precision of computation. </p>
+<p style="display:none;" id="Text_6c">
+<span> &#9679; <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004501">Publisher link</a> </span><br>
+<span> &#9679; <a href="https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1004501&type=printable "> PDF</a> </span><br>
+ <hr></div>
+<div style="display:block;" id="Article_7" class = "article">
+<p><font size='3'> <span style='font-weight: bold;'> Dopamine function and the efficiency of human movement</span><p> Journal of Cognitive Neuroscience 2014 </p><p> To sustain successful behavior in dynamic environments, organisms must learn from their actions and predict action outcomes. Dopamine plays a key role in this process, encoding differences between expected and actual outcomes. A study on Parkinson's disease patients with dopamine depletion showed that while they performed well in low-energy tasks, their performance declined significantly in high-energy tasks, highlighting dopamine's role in mediating the energy cost of action and efficient planning. </p></p>
+<button id="Button_7a" onclick="toggle(this);"> [+] Citation</button>
+<button id="Button_7b" onclick="toggle(this);"> [+] Abstract</button>
+<button id="Button_7c" onclick="toggle(this);"> [+] Links</button>
+
+<p style="display:none;"   id="Text_7a"> 
+<span><font size='3'> Gepshtein S, Li X, Snider J, Plank M, Lee D & Poizner H (2014). Dopamine function and the efficiency of human movement. <span style="font-style: italic;">Journal of Cognitive Neuroscience</span> 26 (3), 645-657. </font></span>
+
+<p style="display:none;"   id="Text_7b"> To sustain successful behavior in dynamic environments, active organisms must be able to learn from the consequences of their actions and predict action outcomes. One of the most important discoveries in systems neuroscience over the last 15 years has been about the key role of the neurotransmitter dopamine in mediating such active behavior. Dopamine cell firing was found to encode differences between the expected and obtained outcomes of actions. Although activity of dopamine cells does not specify movements themselves, a recent study in humans has suggested that tonic levels of dopamine in the dorsal striatum may in part enable normal movement by encoding sensitivity to the energy cost of a movement, providing an implicit “motor motivational” signal for movement. We investigated the motivational hypothesis of dopamine by studying motor performance of patients with Parkinson disease who have marked dopamine depletion in the dorsal striatum and compared their performance with that of elderly healthy adults. All participants performed rapid sequential movements to visual targets associated with different risk and different energy costs, countered or assisted by gravity. In conditions of low energy cost, patients performed surprisingly well, similar to prescriptions of an ideal planner and healthy participants. As energy costs increased, however, performance of patients with Parkinson disease dropped markedly below the prescriptions for action by an ideal planner and below performance of healthy elderly participants. The results indicate that the ability for efficient planning depends on the energy cost of action and that the effect of energy cost on action is mediated by dopamine. </p>
+<p style="display:none;" id="Text_7c">
+<span> &#9679; <a href="https://direct.mit.edu/jocn/article-abstract/26/3/645/28076/Dopamine-Function-and-the-Efficiency-of-Human">Publisher link</a> </span><br>
+<span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Gepshtein_etal_JoCN2014.pdf">PDF</a> </span><br>
+ <hr></div>
+<div style="display:block;" id="Article_8" class = "article">
+<p><font size='3'> <span style='font-weight: bold;'> Prospective optimization</span><p> Proceedings of the IEEE 2014 </p><p> Human performance in perceptual and motor tasks can approach that of an ideal observer and optimal actor, relying on the brain's capacity for flexible information storage and rapid decision-making. These abilities develop through long-term learning involving interactions between the cerebral cortex and the basal ganglia. Insights into brain algorithms for reinforcement learning and prospective optimization have implications for the development of autonomous devices. </p></p>
+<button id="Button_8a" onclick="toggle(this);"> [+] Citation</button>
+<button id="Button_8b" onclick="toggle(this);"> [+] Abstract</button>
+<button id="Button_8c" onclick="toggle(this);"> [+] Links</button>
+
+<p style="display:none;"   id="Text_8a"> 
+<span><font size='3'> Sejnowski TJ, Poizner H, Lynch G, Gepshtein S & Greenspan RJ  (2014). Prospective optimization. <span style="font-style: italic;">Proceedings of the IEEE</span> 102 (5), 799-811. </font></span>
+
+<p style="display:none;"   id="Text_8b"> Human performance approaches that of an ideal observer and optimal actor in some perceptual and motor tasks. These optimal abilities depend on the capacity of the cerebral cortex to store an immense amount of information and to flexibly make rapid decisions. However, behavior only approaches these limits after a long period of learning while the cerebral cortex interacts with the basal ganglia, an ancient part of the vertebrate brain that is responsible for learning sequences of actions directed toward achieving goals. Progress has been made in understanding the algorithms used by the brain during reinforcement learning, which is an online approximation of dynamic programming. Humans also make plans that depend on past experience by simulating different scenarios, which is called prospective optimization. The same brain structures in the cortex and basal ganglia that are active online during optimal behavior are also active offline during prospective optimization. The emergence of general principles and algorithms for goal-directed behavior has consequences for the development of autonomous devices in engineering applications. </p>
+<p style="display:none;" id="Text_8c">
+<span> &#9679; <a href="https://ieeexplore.ieee.org/document/6803897">Publisher link</a> </span><br>
+<span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Sejnowski_et_al_IEEE2014.pdf">PDF</a> </span><br>
+ <hr></div>
+<div style="display:block;" id="Article_9" class = "article">
+<p><font size='3'> <span style='font-weight: bold;'> Visual perception: Theoretical and methodological foundations</span><p>  Handbook of Psychology, John Wiley & Sons 2013 </p><p> This chapter contains three tutorial overviews of theoretical and methodological ideas that are important to students of visual perception. From the vast scope of the material we could have covered, we have chosen a small set of topics that form the foundations of vision research. </p></p>
+<button id="Button_9a" onclick="toggle(this);"> [+] Citation</button>
+<button id="Button_9b" onclick="toggle(this);"> [+] Abstract</button>
+<button id="Button_9c" onclick="toggle(this);"> [+] Links</button>
+
+<p style="display:none;"   id="Text_9a"> 
+<span><font size='3'> Kubovy M, Epstein W, Gepshtein S (2013). Visual perception: Theoretical and methodological foundations. <span style="font-style: italic;">In Healy AF & Proctor RW (Eds), Experimental Psychology, 2ed, Vol. 4 in Weiner IB (Editor-in-Chief) Handbook of Psychology. John Wiley & Sons, New York, USA. </span>  (), 85-119. </font></span>
+
+<p style="display:none;"   id="Text_9b"> First, we provide a sketch of the theoretical foundations of our field. We lay out four major research programs (in the past they might have been called “schools”), and then discuss how they address eight foundational questions that promise to occupy our discipline for many years to come. Second, we discuss psychophysics, which offers indispensable tools for the researcher. Here we lead the reader from the idea of threshold to the tools of signal detection theory. To illustrate our presentation of methodology, we have not focused on the classics that appear in much of the secondary literature. Rather, we have chosen recent research that showcases the current practice in the field, and the applicability of these methods to a wide range of problems. The contemporary view of perception maintains that perceptual theory requires an understanding of our environment as well as the perceiver. That is why, in the third section, we ask what are the regularities of the environment, how may they be discovered, and to what extent do perceivers use them. Here, too, we use recent research to exemplify this approach. </p>
+<p style="display:none;" id="Text_9c">
+<span> &#9679; <a href="https://www.wiley.com/en-us/Handbook+of+Psychology%2C+Volume+4%2C+Experimental+Psychology%2C+2nd+Edition-p-9781118281949">Publisher link</a> </span><br>
+<span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Kubovy_Epstein_Gepshtein_Wiley2e_2013.pdf">PDF</a> </span><br>
+ <hr></div>
+<div style="display:block;" id="Article_10" class = "article">
+<p><font size='3'> <span style='font-weight: bold;'> Sensory adaptation as optimal resource allocation</span><p>  PNAS 2013 </p><p> Visual adaptation is expected to improve performance in new environments, but sometimes it hinders performance. We explain this paradox with an economic process that allocates limited neural resources optimally. </p></p>
+<button id="Button_10a" onclick="toggle(this);"> [+] Citation</button>
+<button id="Button_10b" onclick="toggle(this);"> [+] Abstract</button>
+<button id="Button_10c" onclick="toggle(this);"> [+] Links</button>
+
+<p style="display:none;"   id="Text_10a"> 
+<span><font size='3'> Gepshtein S, Lesmes LA, Albright TD (2013). Sensory adaptation as optimal resource allocation. <span style="font-style: italic;">Proceedings of the National Academy of Sciences, USA </span> 110 (11), 4368-4373. </font></span>
+
+<p style="display:none;"   id="Text_10b"> Visual adaptation is expected to improve visual performance in the new environment. This expectation has been contradicted by evidence that adaptation sometimes decreases sensitivity for the adapting stimuli, and sometimes it changes sensitivity for stimuli very different from the adapting ones. We hypothesize that this pattern of results can be explained by a process that optimizes sensitivity for many stimuli, rather than changing sensitivity only for those stimuli whose statistics have changed. To test this hypothesis, we measured visual sensitivity across a broad range of spatiotemporal modulations of luminance, while varying the distribution of stimulus speeds. The manipulation of stimulus statistics caused a large-scale reorganization of visual sensitivity, forming the orderly pattern of sensitivity gains and losses. This pattern is predicted by a theory of distribution of receptive field characteristics in the visual system. </p>
+<p style="display:none;" id="Text_10c">
+<span> &#9679; <a href="https://www.pnas.org/doi/full/10.1073/pnas.1204109110">Publisher link</a> </span><br>
+<span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Gepshtein_etal_PNAS2013.pdf">PDF</a> </span><br>
+ <hr></div>
+<div style="display:block;" id="Article_11" class = "article">
+<p><font size='3'> <span style='font-weight: bold;'> Two psychologies of perception and the prospect of their synthesis</span><p> Philosophical Psychology 2010 </p><p> Two traditions, the statistical and the phenomenological, have greatly influenced research of perception, respectively in sensory psychophysics and Gestalt psychology. Here we consider an approach that may reconcile these two traditions. </p></p>
+<button id="Button_11a" onclick="toggle(this);"> [+] Citation</button>
+<button id="Button_11b" onclick="toggle(this);"> [+] Abstract</button>
+<button id="Button_11c" onclick="toggle(this);"> [+] Links</button>
+
+<p style="display:none;"   id="Text_11a"> 
+<span><font size='3'> Gepshtein S (2010). Two psychologies of perception and the prospect of their synthesis. <span style="font-style: italic;">Philosophical Psychology</span> 23 (2), 217-281. </font></span>
+
+<p style="display:none;"   id="Text_11b"> Two traditions have had a great impact on the theoretical and experimental research of perception. One tradition is statistical, stretching from Fechner's enunciation of psychophysics in 1860 to the modern view of perception as statistical decision making. The other tradition is phenomenological, from Brentano's “empirical standpoint” of 1874 to the Gestalt movement and the modern work on perceptual organization. Each tradition has at its core a distinctive assumption about the indivisible constituents of perception: the just-noticeable differences of sensation in the tradition of Fechner vs. the phenomenological Gestalts in the tradition of Brentano. But some key results from the two traditions can be explained and connected using an approach that is neither statistical nor phenomenological. This approach rests on a basic property of any information exchange: a principle of measurement formulated in 1946 by Gabor as a part of his quantal theory of information. Here the indivisible components are units (quanta) of information that remain invariant under changes of precision of measurement. This approach helped to understand how sensory measurements are implemented by single neural cells. But recent analyses suggest that this approach has the power to explain larger-scale characteristics of sensory systems. </p>
+<p style="display:none;" id="Text_11c">
+<span> &#9679; <a href="https://www.tandfonline.com/doi/full/10.1080/09515081003727483">Publisher link</a> </span><br>
+<span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Gepshtein_TwoPsychologies_2010.pdf">PDF</a> </span><br>
+ <hr></div>
+<div style="display:block;" id="Article_12" class = "article">
+<p><font size='3'> <span style='font-weight: bold;'> The lawful perception of apparent motion</span><p> Journal of Vision 2007 </p><p> The study resolved a controversy on how spatial and temporal distances affect the strength of visual apparent motion. </p></p>
+<button id="Button_12a" onclick="toggle(this);"> [+] Citation</button>
+<button id="Button_12b" onclick="toggle(this);"> [+] Abstract</button>
+<button id="Button_12c" onclick="toggle(this);"> [+] Links</button>
+
+<p style="display:none;"   id="Text_12a"> 
+<span><font size='3'> Gepshtein S, Kubovy M (2007). The lawful perception of apparent motion. <span style="font-style: italic;">Journal of Vision</span> 7 (8:9), 1-15. </font></span>
+
+<p style="display:none;"   id="Text_12b"> Visual apparent motion is the experience of motion from the successive stimulation of separate spatial locations. How spatial and temporal distances interact to determine the strength of apparent motion has been controversial. Some studies report space-time coupling: If we increase spatial or temporal distance between successive stimuli, we must also increase the other distance between them to maintain a constant strength of apparent motion (Korte's third law of motion). Other studies report space-time tradeoff: If we increase one of these distances, we must decrease the other to maintain a constant strength of apparent motion. In this article, we resolve the controversy. Starting from a normative theory of motion measurement and data on human spatiotemporal sensitivity, we conjecture that both coupling and tradeoff should occur, but at different speeds. We confirm the prediction in two experiments, using suprathreshold multistable apparent-motion displays called motion lattices. Our results show a smooth transition between the tradeoff and coupling as a function of speed: Tradeoff occurs at low speeds and coupling occurs at high speeds. From our data, we reconstruct the suprathreshold equivalence contours that are analogous to isosensitivity contours obtained at the threshold of visibility. </p>
+<p style="display:none;" id="Text_12c">
+<span> &#9679; <a href="https://jov.arvojournals.org/article.aspx?articleid=2122193">Publisher link</a> </span><br>
+<span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/GepshteinKubovy_jov2007.pdf">PDF</a> </span><br>
+ <hr></div>
+<div style="display:block;" id="Article_13" class = "article">
+<p><font size='3'> <span style='font-weight: bold;'> Optimal compensation for changes in task relevant movement variability</span><p> Journal of Neuroscience 2005 </p><p> This work showed that humans can quickly estimate variability of their own movements and adjust their actions accordingly, demonstrating behavior consistent with an optimal planner of movement. </p></p>
+<button id="Button_13a" onclick="toggle(this);"> [+] Citation</button>
+<button id="Button_13b" onclick="toggle(this);"> [+] Abstract</button>
+<button id="Button_13c" onclick="toggle(this);"> [+] Links</button>
+
+<p style="display:none;"   id="Text_13a"> 
+<span><font size='3'> Trommershäuser J, Gepshtein S, Maloney LT, Landy MS & Banks MS (2005). Optimal compensation for changes in task relevant movement variability. <span style="font-style: italic;">Journal of Neuroscience</span> 25 (31), 7169-7178. </font></span>
+
+<p style="display:none;"   id="Text_13b"> Effective movement planning should take into account the consequences of possible errors in executing a planned movement. These errors can result from either sensory uncertainty or variability in movement planning and production. We examined the ability of humans to compensate for variability in sensory estimation and movement production under conditions in which variability is increased artificially by the experimenter. Subjects rapidly pointed at a target region that had an adjacent penalty region. Target and penalty hits yielded monetary rewards and losses. We manipulated the task-relevant variability by perturbing visual feedback of finger position during the movement. The feedback was shifted in a random direction with a random amplitude in each trial, causing an increase in the task-relevant variability. Subjects were unable to counteract this form of perturbation. Rewards and penalties were based on the perturbed, visually specified finger position. Subjects rapidly acquired an estimate of their new variability in <120 trials and adjusted their aim points accordingly. We compared subjects' performance to the performance of an optimal movement planner maximizing expected gain. Their performance was consistent with that expected from an optimal movement planner that perfectly compensated for externally imposed changes in task-relevant variability. When exposed to novel stimulus configurations, aim points shifted in the first trial without showing any detectable trend across trials. These results indicate that subjects are capable of changing their pointing strategy in the presence of externally imposed noise. Furthermore, they manage to update their estimate of task-relevant variability and to transfer this estimate to novel stimulus configurations. </p>
+<p style="display:none;" id="Text_13c">
+<span> &#9679; <a href="https://www.jneurosci.org/content/25/31/7169">Publisher link</a> </span><br>
+<span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/TGMLB_JNeurosci2005.pdf">PDF</a> </span><br>
+ <hr></div>
+<div style="display:block;" id="Article_14" class = "article">
+<p><font size='3'> <span style='font-weight: bold;'> Why is spatial stereoresolution so low?</span><p> Journal of Neuroscience 2004 </p><p> This study asked why stereoscopic perception has much poorer spatial resolution than the perception of luminance patterns. (Stereoscopic vision depends on subtle differences in the views of two eyes.) We identified several key factors: computational and biological. </p></p>
+<button id="Button_14a" onclick="toggle(this);"> [+] Citation</button>
+<button id="Button_14b" onclick="toggle(this);"> [+] Abstract</button>
+<button id="Button_14c" onclick="toggle(this);"> [+] Links</button>
+
+<p style="display:none;"   id="Text_14a"> 
+<span><font size='3'> Banks MS, Gepshtein S & Landy MS (2004). Why is spatial stereoresolution so low?. <span style="font-style: italic;">Journal of Neuroscience</span> 24 (9), 2077-2089. </font></span>
+
+<p style="display:none;"   id="Text_14b"> Spatial stereoresolution (the finest detectable modulation of binocular disparity) is much poorer than luminance resolution (finest detectable luminance variation). In a series of psychophysical experiments, we examined four factors that could cause low stereoresolution: (1) the sampling properties of the stimulus, (2) the disparity gradient limit, (3) low-pass spatial filtering by mechanisms early in the visual process, and (4) the method by which binocular matches are computed. Our experimental results reveal the contributions of the first three factors. A theoretical analysis of binocular matching by interocular correlation reveals the contribution of the fourth: the highest attainable stereoresolution may be limited by (1) the smallest useful correlation window in the visual system, and (2) a matching process that estimates the disparity of image patches and assumes that disparity is constant across the patch. Both properties are observed in disparity-selective neurons in area V1 of the primate. </p>
+<p style="display:none;" id="Text_14c">
+<span> &#9679; <a href="https://www.jneurosci.org/content/24/9/2077">Publisher link</a> </span><br>
+<span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/BGL_JNeurosci2004.pdf">PDF</a> </span><br>
+ <hr></div>
+<div style="display:block;" id="Article_15" class = "article">
+<p><font size='3'> <span style='font-weight: bold;'> Viewing geometry determines how vision and touch combine in size perception</span><p> Current Biology 2003 </p><p> The visual and haptic senses provide information differently. When both are used, humans integrate these senses flexibly, resulting in a more precise judgment of object size than using either sense alone. </p></p>
+<button id="Button_15a" onclick="toggle(this);"> [+] Citation</button>
+<button id="Button_15b" onclick="toggle(this);"> [+] Abstract</button>
+<button id="Button_15c" onclick="toggle(this);"> [+] Links</button>
+
+<p style="display:none;"   id="Text_15a"> 
+<span><font size='3'> Gepshtein S, Banks MS  (2003). Viewing geometry determines how vision and touch combine in size perception. <span style="font-style: italic;">Current Biology</span> 13 (6), 483-488. </font></span>
+
+<p style="display:none;"   id="Text_15b"> Vision and haptics have different limitations and advantages because they obtain information by different methods. If the brain combined information from the two senses optimally, it would rely more on the one providing more precise information for the current task. In this study, human observers judged the distance between two parallel surfaces in two within-modality experiments (vision-alone and haptics-alone) and in an intermodality experiment (vision and haptics together). In the within-modality experiments, the precision of visual estimates varied with surface orientation, as expected from geometric considerations; the precision of haptic estimates did not. An ideal observer that combines visual and haptic information weights them differently as a function of orientation. In the intermodality experiment, humans adjusted visual and haptic weights in a fashion quite similar to that of the ideal observer. As a result, combined size estimates are finer than is possible with either vision or haptics alone; indeed, they approach statistical optimality. </p>
+<p style="display:none;" id="Text_15c">
+<span> &#9679; <a href="https://www.sciencedirect.com/science/article/pii/S0960982203001337">Publisher link</a> </span><br>
+<span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/GepshteinBanks_CurBio2003.pdf">PDF</a> </span><br>
+ <hr></div>
+<div style="display:block;" id="Article_16" class = "article">
+<p><font size='3'> <span style='font-weight: bold;'> The emergence of visual objects in space-time</span><p>  PNAS 2000 </p><p> What we perceive as an object depends on whether its parts connect across time as separate elements or they combine into a spatially extended entity that persists in time. </p></p>
+<button id="Button_16a" onclick="toggle(this);"> [+] Citation</button>
+<button id="Button_16b" onclick="toggle(this);"> [+] Abstract</button>
+<button id="Button_16c" onclick="toggle(this);"> [+] Links</button>
+
+<p style="display:none;"   id="Text_16a"> 
+<span><font size='3'> Gepshtein S, Kubovy M (2000). The emergence of visual objects in space-time. <span style="font-style: italic;">Proceedings of the National Academy of Sciences, USA </span> 97 (14), 8186-8191. </font></span>
+
+<p style="display:none;"   id="Text_16b"> It is natural to think that in perceiving dynamic scenes, vision takes a series of snapshots. Motion perception can ensue when the snapshots are different. The snapshot metaphor suggests two questions: (i) How does the visual system put together elements within each snapshot to form objects? This is the spatial grouping problem. (ii) When the snapshots are different, how does the visual system know which element in one snapshot corresponds to which element in the next? This is the temporal grouping problem. The snapshot metaphor is a caricature of the dominant model in the field—the sequential model—according to which spatial and temporal grouping are independent. The model we propose here is an interactive model, according to which the two grouping mechanisms are not separable. Currently, the experiments that support the interactive model are not conclusive because they use stimuli that are excessively specialized. To overcome this weakness, we created a new type of stimulus—spatiotemporal dot lattices—which allow us to independently manipulate the strength of spatial and temporal groupings. For these stimuli, sequential models make one fundamental assumption: if the spatial configuration of the stimulus remains constant, the perception of spatial grouping cannot be affected by manipulations of the temporal configuration of the stimulus. Our data are inconsistent with this assumption. </p>
+<p style="display:none;" id="Text_16c">
+<span> &#9679; <a href="https://www.pnas.org/doi/full/10.1073/pnas.97.14.8186">Publisher link</a> </span><br>
+<span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/GepshteinKubovy_PNAS2000.pdf "> PDF</a> </span><br>
+ <hr></div>
+></div>
+<div><font size="1" face="Calibri">Updated in July 9, 2024 at 6:26 PM PDT</font> </div
+</body></html>
+PublicationsHTML.txt
+PublicationsHTML.txt. На экране.

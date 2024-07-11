@@ -1,9 +1,19 @@
+body,
+html {
+  font: medium Calibri;
+}
+.publication {
+  border: 1px solid black;
+  padding: 10px;
+  padding-top: 20px;
+  box-sizing: border-box;
+  margin-top: 80px;
+}
 header {
   background-color: #000; /* Черный фон */
   color: #fff;
   padding: 10px;
   position: fixed;
-  /* position: relative; */
   display: flex;
   flex-direction: column;
   top: 0;
@@ -12,9 +22,7 @@ header {
   box-sizing: border-box;
   width: 100%;
   z-index: 1000; /* Убедитесь, что панель поверх всего */
-  /* display: flex; */
   align-items: center;
-  /* justify-content: center; */
   justify-content: space-between;
 }
 
@@ -29,6 +37,7 @@ header {
   justify-content: center;
   align-items: center;
   width: 100%;
+  /* font: medium Calibri; */
 }
 .header-row h3 {
   margin: 0;
@@ -37,11 +46,33 @@ header {
 }
 .header-second-row h3 {
   margin: 0;
-  /* text-align: center; */
   font: medium Calibri;
-  /* margin-bottom: 20px; */
 }
-
+.btns {
+  display: none;
+}
+.filter {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  background-color: Gainsboro;
+  padding: 7px;
+}
+.common {
+  border: 1px solid white;
+  padding: 2px;
+}
+.article {
+  display: block;
+}
+.title {
+  font-weight: bold;
+}
+.text {
+  display: none;
+}
+.textItalic {
+  font-style: italic;
+}
 .menu-icon,
 .search-icon {
   position: absolute;
@@ -49,7 +80,6 @@ header {
   top: 10px;
   cursor: pointer;
   font-size: 16px; /* Или medium */
-  /* flex-shrink: 0;  Предотвращение сжатия иконки меню */
 }
 nav {
   position: fixed;
@@ -127,15 +157,7 @@ nav.show {
 }
 .hidden {
   display: none;
-  /* transform: translateX(-100%); Меню скрыто */
 }
 .highlight {
   background-color: yellow;
 }
-
-/* .header h3 {
-  margin: 0;
-  font-size: 24px;
-  text-align: center;
-  flex-grow: 1;
-} */

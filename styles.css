@@ -34,8 +34,9 @@ header {
 }
 .header-row {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  margin-left: 30px;
+  /* align-items: center; */
   width: 100%;
   /* font: medium Calibri; */
 }
@@ -79,7 +80,7 @@ header {
   left: 10px;
   top: 10px;
   cursor: pointer;
-  font-size: 16px; /* Или medium */
+  font-size: 18px; /* Или medium */
 }
 nav {
   position: fixed;
@@ -104,7 +105,7 @@ nav ul li {
   margin: 0;
   padding: 10px 20px;
   color: #fff;
-  font: medium Calibri;
+  font: medium Quicksand;
   /* background-color: #333; */
   /* background-color: green;
   border: 1px solid red; */

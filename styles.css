@@ -80,7 +80,7 @@ header {
 .search-icon {
   position: absolute;
   left: 10px;
-  top: 6px;
+  top: 2px;
   cursor: pointer;
   font-size: 18px; /* Или medium */
 }

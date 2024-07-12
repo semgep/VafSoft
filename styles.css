@@ -34,8 +34,8 @@ header {
 }
 .header-row {
   display: flex;
-  justify-content: left;
-  margin-left: 30px;
+  /* justify-content: left;
+  margin-left: 30px; */
   /* align-items: center; */
   width: 100%;
   /* font: medium Calibri; */
@@ -43,6 +43,8 @@ header {
 .header-row h3 {
   margin: 0;
   font: medium Calibri;
+  justify-content: left;
+  margin-left: 30px;
   margin-bottom: 10px;
 }
 .header-second-row h3 {

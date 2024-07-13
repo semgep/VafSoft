@@ -1,14 +1,3 @@
-function getNow() {
-  const options = {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-    timeZoneName: "short",
-  };
-  return new Date().toLocaleString("en-US", options);
-}
 function toggle(a) {
   LastObj != undefined && closeText(LastObj),
     (LastObj == undefined ||
@@ -73,15 +62,29 @@ function showDiv(id) {
 function hideDiv(id) {
   document.getElementById(id).style.display = "none";
 }
-
+function highlightCurrentPage() {
+  var currentPage = window.location.pathname.split("/").pop(); // Получаем текущий путь
+  document.querySelectorAll("nav ul li a").forEach(function (link) {
+    // Проходимся по всем ссылкам в меню
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("current-page");
+    } else {
+      link.classList.remove("current-page");
+    }
+  });
+}
 function toggleMenu() {
   var menu = document.getElementById("menu");
+  // var menuIcon = document.getElementById("menu-icon");
+  var menuIcon = document.getElementsByClassName("menu-icon");
   if (menu.classList.contains("show")) {
     menu.classList.remove("show");
     menu.classList.add("hidden");
+    menuIcon[0].innerHTML = "&#9776;"; // Символ гамбургера
   } else {
     menu.classList.add("show");
     menu.classList.remove("hidden");
+    menuIcon[0].innerHTML = "&times;"; // Символ закрытия
   }
 }
 function toggleSearch() {

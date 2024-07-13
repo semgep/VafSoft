@@ -10,8 +10,8 @@ html {
   margin-top: 120px;
 }
 header {
-  background-color: #000; /* Черный фон */
-  color: #fff;
+  background-color: black; /* Черный фон */
+  color: white;
   padding: 10px;
   position: fixed;
   display: flex;
@@ -85,7 +85,7 @@ nav {
   left: 0;
   width: 150px; /* Ширина меню */
   height: 50%;
-  background-color: #333; /* Цвет фона меню */
+  background-color: black; /* Цвет фона меню */
   overflow: auto;
   transform: translateX(-100%); /* Скрываем меню за пределами экрана */
   transition: transform 0.3s ease;
@@ -101,12 +101,12 @@ nav ul {
 nav ul li {
   margin: 0;
   padding: 5px;
-  color: #fff;
+  color: white;
   font: medium;
 }
 
 nav ul li a {
-  color: #fff;
+  color: white;
   text-decoration: none;
   display: block;
 }
@@ -114,7 +114,7 @@ nav.show {
   transform: translateX(0);
 }
 .close-menu {
-  color: #fff;
+  color: white;
   font-size: 30px;
   cursor: pointer;
   padding: 10px;
@@ -124,7 +124,7 @@ nav.show {
   position: fixed;
   top: 50px;
   right: 10px;
-  background-color: #fff;
+  background-color: white;
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   z-index: 1000;

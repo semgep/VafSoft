@@ -76,7 +76,10 @@ header {
   position: absolute;
   left: 10px;
   top: 8px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
+  background-color: #333;
   font-size: 18px; /* Или medium */
 }
 nav {
@@ -84,7 +87,7 @@ nav {
   top: 0;
   left: 0;
   width: 150px; /* Ширина меню */
-  height: 50%;
+  height: 100%;
   background-color: black; /* Цвет фона меню */
   overflow: auto;
   transform: translateX(-100%); /* Скрываем меню за пределами экрана */
@@ -101,6 +104,7 @@ nav ul {
 nav ul li {
   margin: 0;
   padding: 5px;
+  padding-left: 40px;
   color: white;
   font: medium;
 }
@@ -108,10 +112,14 @@ nav ul li {
 nav ul li a {
   color: white;
   text-decoration: none;
+  text-align: left;
   display: block;
 }
 nav.show {
   transform: translateX(0);
+}
+.current-page {
+  color: SteelBlue; /* Или любой другой цвет для выделения */
 }
 .close-menu {
   color: white;

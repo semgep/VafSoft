@@ -93,7 +93,7 @@ nav {
   transform: translateX(-100%); /* Скрываем меню за пределами экрана */
   transition: transform 0.3s ease;
   z-index: 999; /* Убедитесь, что меню над контентом */
-  margin-top: 115px;
+  margin-top: 111px;
 }
 nav ul {
   list-style-type: none;

@@ -141,6 +141,17 @@ function begin() {
     window.scrollTo(0, 0); // Прокрутка страницы к началу при загрузке
   });
 }
+function getNow() {
+  const options = {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    timeZoneName: "short",
+  };
+  document.getElementById("getNow").innerHTML += `<font size="1">${new Date().toLocaleString("en-US",options)}</font>`;
+}
 document.addEventListener("DOMContentLoaded", function () {
   window.scrollTo(0, 0); // Прокрутка страницы к началу при загрузке
   var menuLinks = document.querySelectorAll("#menu ul li a");

@@ -67,6 +67,7 @@ header {
 }
 .text {
   display: none;
+  font-size: medium;
 }
 .textItalic {
   font-style: italic;

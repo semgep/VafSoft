@@ -1,3 +1,5 @@
+var LastObj;
+var ObjBtnTxt;
 function toggle(a) {
   LastObj != undefined && closeText(LastObj),
     (LastObj == undefined ||
@@ -23,8 +25,6 @@ function closeText(d) {
     (b = b.replace("[-]", "[+]")),
     (c.innerText = b);
 }
-var LastObj;
-var ObjBtnTxt;
 function toggleDisplay() {
   (document.getElementById("filterDropdown").style.display = "block"),
     (document.getElementById("Btns").style.display = "inline");
@@ -62,6 +62,22 @@ function showDiv(id) {
 function hideDiv(id) {
   document.getElementById(id).style.display = "none";
 }
+function buildMenu() {
+  const fileUrl = "https://semgep.github.io/VafSoft/menu.txt";
+  fetch(fileUrl)
+    .then((response) => response.text())
+    .then((text) => {
+      let ulList = document.getElementById("ulList");
+      for (let elem of text.split("\r\n")) {
+        let newElement = document.createElement("li");
+        let newLink = document.createElement("a");
+        newLink.href = elem.split(",")[0] + ".html";
+        newLink.textContent = elem.split(",")[0];
+        newElement.appendChild(newLink);
+        ulList.appendChild(newElement);
+      }
+    });
+}
 function highlightCurrentPage() {
   var currentPage = window.location.pathname.split("/").pop(); // Получаем текущий путь
   document.querySelectorAll("nav ul li a").forEach(function (link) {
@@ -97,7 +113,6 @@ function toggleSearch() {
     search.classList.remove("hidden");
   }
 }
-
 function searchSite() {
   var input = document.getElementById("searchInput").value.toLowerCase();
   var content = document.querySelectorAll("body *");
@@ -122,7 +137,6 @@ function searchSite() {
 function scrollToElement(element) {
   element.scrollIntoView({ behavior: "smooth", block: "center" });
 }
-
 function highlightText(element, text) {
   var innerHTML = element.innerHTML;
   var index = innerHTML.toLowerCase().indexOf(text);
@@ -150,7 +164,12 @@ function getNow() {
     minute: "numeric",
     timeZoneName: "short",
   };
-  document.getElementById("getNow").innerHTML += `<font size="1">${new Date().toLocaleString("en-US",options)}</font>`;
+  document.getElementById(
+    "getNow"
+  ).innerHTML += `<font size="1">${new Date().toLocaleString(
+    "en-US",
+    options
+  )}</font>`;
 }
 document.addEventListener("DOMContentLoaded", function () {
   window.scrollTo(0, 0); // Прокрутка страницы к началу при загрузке

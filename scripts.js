@@ -63,7 +63,7 @@ function hideDiv(id) {
   document.getElementById(id).style.display = "none";
 }
 function buildMenu() {
-  const fileUrl = "https://semgep.github.io/VafSoft/menu.txt"; 
+  const fileUrl = "menu.txt";  //  "https://semgep.github.io/VafSoft/menu.txt"; 
   fetch(fileUrl)
     .then((response) => response.text())
     .then((text) => {

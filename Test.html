@@ -1,0 +1,138 @@
+
+<!DOCTYPE html> <html> <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Test</title>
+   <link rel="stylesheet" href="styles.css">
+   <script src="scripts.js"></script>
+   </head> 
+   <body onload="highlightCurrentPage();buildMenu()"> 
+  
+   <div id = "Publications" class="publication">
+   <header>
+  <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+   <div class="header-content"><div class="header-row"><h3>Sergei Gepshtein's Portal</h3></div>
+   <div class="header-second-row"> <h3>Publications: a sample</h3> </div></div> </header>
+  <nav id="menu" class="hidden"><div class="close-menu" onclick="toggleMenu()">&times;</div>
+    <ul id="ulList"> 
+   <!-- <li><a href="#About">About</a></li> 
+   <li><a href="#Publications">Publications</a></li> 
+   <li><a href="News.html">News</a></li>  -->
+</ul> </nav>
+  <span>
+  <button id="Filter" onclick = "toggleDisplay();"> Filter</button>
+  <button onclick="processSelection()">Apply</button>
+  <span id ="Btns" class="btns">
+  <button id="Hide" onclick = "toggleHide();"> Hide</button>
+  <button id="Clear" onclick = "toggleClear();"> Clear</button>
+  </span>
+  </span>
+  <div id="filterDropdown"  style = "display:none; font:small Calibri;"><br>
+  <div class="filter" >
+  <label><input type="checkbox" value=1>Tags</label>
+  <label><input type="checkbox" value=13,6,7,8>action</label>
+  <label><input type="checkbox" value=2,4>architecture</label>
+  <label><input type="checkbox" value=8>brain</label>
+  <label><input type="checkbox" value=15>cue combination</label>
+  <label><input type="checkbox" value=2>design</label>
+  <label><input type="checkbox" value=11>economics</label>
+  <label><input type="checkbox" value=16>gestalt</label>
+  <label><input type="checkbox" value=15>haptics</label>
+  <label><input type="checkbox" value=15>intersensory</label>
+  <label><input type="checkbox" value=10,11,12>motion</label>
+  <label><input type="checkbox" value=5>neurons</label>
+  <label><input type="checkbox" value=3>neuroscience</label>
+  <label><input type="checkbox" value=11,13,15,8>optimality</label>
+  <label><input type="checkbox" value=11>phenomenology</label>
+  <label><input type="checkbox" value=5>physiology</label>
+  <label><input type="checkbox" value=9>psychology</label>
+  <label><input type="checkbox" value=10,11,12,13,14,15,16,2,3,6,7>psychophysics</label>
+  <label><input type="checkbox" value=10,5>sensitivity</label>
+  <label><input type="checkbox" value=2,4>space</label>
+  <label><input type="checkbox" value=14>stereopsis</label>
+  <label><input type="checkbox" value=3,6>theory</label>
+  <label><input type="checkbox" value=15>touch</label>
+  <label><input type="checkbox" value=11,12,15,16,3>vision</label>
+  </div></div><hr>
+  <div class="common">
+  <div id="Article_2" class = "article">
+<!-- <p><font size='3'>  -->
+   <span class="title"> Perceptual space as a well of possibilities
+   </span>
+   <p>  Springer/Nature 2022 
+   </p>
+   <p> The meaning of 'space' varies significantly among scientific disciplines (such as physics and neuroscience) and practical professions (such as architecture and design). Here, we seek a unifying property of the various concepts of space, grounded in science and useful for design. 
+   </p>
+<!-- </p> -->
+  <button id="Button_2a" onclick="toggle(this);"> [+] Citation</button>
+  <button id="Button_2b" onclick="toggle(this);"> [+] Abstract</button>
+  <button id="Button_2c" onclick="toggle(this);"> [+] Links</button>
+  
+  <p class="text" id="Text_2a"> 
+  <span> Gepshtein S (2022). Perceptual space as a well of possibilities. 
+   <span class="textItalic">Affordances in Everyday Life: A Multidisciplinary Collection of Essays, Springer/Nature 
+   </span>  
+   (), 123–137.
+ </span>
+  
+  <p style="display:none;"   id="Text_2b"> Everyone seems to know what space is. But the meaning of “space” varies from person to person and from one occasion to another. It varies among the academic disciplines concerned with spatiality, such as physics, psychology and phenomenology, and among practical professions, such as architecture and filmmaking, stage design and creative writing. How can we reconcile this polyphony? Is there an underlying root concept of space? In other words, do these multiple and disparate concepts have a “focal meaning”? One manner of answering these questions is offered here, by considering a moving person who is sequentially exposed to specific possibilities of experience at different spatial locations. Reminiscent of the concept of affordance, the present account is concerned with possibilities of experience, rather than with actual experience, and it is trained on distributed patterns of perception and behavior, rather than on their piecewise characterization. 
+</p>
+  <p style="display:none;" id="Text_2c">
+  <span> &#9679; 
+   <a href="https://link.springer.com/chapter/10.1007/978-3-031-08629-8_12">Publisher link</a> 
+</span>
+<br>
+  <span> &#9679; 
+   <a href="http://vcl.salk.edu/~gepshtein/papers/Gepshtein%20-%20Space%20as%20Possibilities%20-%202022.pdf">PDF
+
+   </a> 
+</span><br>
+   <hr></div>
+  <div id="Article_3" class = "article">
+  <p><font size='3'> <span style='font-weight: bold;'> Spatially distributed computation in cortical circuits</span><p> Science Advances 2022 </p><p> Neural waves are patterns of neural activation distributed across the brain. Understanding how these waves interact (or interfere) with one another helps to overcome the limitations of the traditional view of brain function. </p></p>
+  <button id="Button_3a" onclick="toggle(this);"> [+] Citation</button>
+  <button id="Button_3b" onclick="toggle(this);"> [+] Abstract</button>
+  <button id="Button_3c" onclick="toggle(this);"> [+] Links</button>
+  
+  <p style="display:none;"   id="Text_3a"> 
+  <span><font size='3'> Gepshtein S, Pawar AS, Kwon S, Savel'ev S, Albright TD (2022). Spatially distributed computation in cortical circuits. <span style="font-style: italic;">Science Advances</span> 8 (16), 1-19. </font></span>
+  
+  <p style="display:none;"   id="Text_3b"> The traditional view of neural computation in the cerebral cortex holds that sensory neurons are specialized, i.e., selective for certain dimensions of sensory stimuli. This view was challenged by evidence of contextual interactions between stimulus dimensions in which a neuron’s response to one dimension strongly depends on other dimensions. Here we use methods of mathematical modeling, psychophysics, and electrophysiology to address shortcomings of the traditional view. Using a model of a generic cortical circuit, we begin with the simple demonstration that cortical responses are always distributed among neurons, forming characteristic waveforms which we call "neural waves." When stimulated by patterned stimuli, circuit responses arise by interference of neural waves. Results of this process depend on interaction between stimulus dimensions. Comparison of modeled responses with responses of biological vision makes it clear that the framework of neural wave interference provides a useful alternative to the standard concept of neural computation. </p>
+  <p style="display:none;" id="Text_3c">
+  <span> &#9679; <a href="https://www.science.org/doi/10.1126/sciadv.abl5865">Publisher link</a> </span><br>
+  <span> &#9679; <a href="https://www.science.org/doi/epdf/10.1126/sciadv.abl5865 "> PDF</a> </span><br>
+   <hr></div>
+  <div id="Article_4" class = "article">
+  <p><font size='3'> <span style='font-weight: bold;'> Species of space</span><p> Architectural Design 2020 </p><p> In their drawings, architects depict physical containers of space. But aren't they missing a key ingredient of spatial representation, shaped jointly by the environment and the person? </p></p>
+  <button id="Button_4a" onclick="toggle(this);"> [+] Citation</button>
+  <button id="Button_4b" onclick="toggle(this);"> [+] Abstract</button>
+  <button id="Button_4c" onclick="toggle(this);"> [+] Links</button>
+  
+  <p style="display:none;"   id="Text_4a"> 
+  <span><font size='3'> Gepshtein S (2020). Species of space. <span style="font-style: italic;">Architectural Design</span> 90 (6), 36-40. </font></span>
+  
+  <p style="display:none;"   id="Text_4b"> Multiple concepts of space have originated in different arts and sciences, related to one another but also distinct because they are viewed through radically different lenses. In physics and physiology, space is an aspect of the objective reality, couched in terms of metrics and distances. In psychology and phenomenology, space is conceived from the first-person perspective, structured by one’s plans, intentions and affordances. Different yet are the concepts of space entertained by artists and designers: in painting and photography, cinema and architecture, literary criticism and philosophy of art. Here space is “constructed” to support praxis: representing a solid object on a surface, facilitating navigation or analyzing a narrative. In the emerging arena of Neuroscience for Architecture it is important to appreciate differences between these concepts of space, learn about them in their context and then understand how they mix in practice. The author shows how the space of experience is articulated by boundaries that arise from the human body. Although intangible and fluid, these boundaries are nevertheless real and systematic, which is why they readily yield to the methods of science. </p>
+  <p style="display:none;" id="Text_4c">
+  <span> &#9679; <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ad.2629">Publisher link</a> </span><br>
+  <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Gepshtein_AD2020_full.pdf "> PDF</a> </span><br>
+   <hr></div>
+  <div id="Article_5" class = "article">
+  <p><font size='3'> <span style='font-weight: bold;'> Mechanisms of spatiotemporal selectivity in cortical area MT</span><p> Neuron 2019 </p><p> Cortical sensory neurons were thought to respond selectively to specific stimuli within their receptive fields. Here we show that the concept of stimulus selectivity as a stable property of neurons needs revision. </p></p>
+  <button id="Button_5a" onclick="toggle(this);"> [+] Citation</button>
+  <button id="Button_5b" onclick="toggle(this);"> [+] Abstract</button>
+  <button id="Button_5c" onclick="toggle(this);"> [+] Links</button>
+  
+  <p style="display:none;"   id="Text_5a"> 
+  <span><font size='3'> Pawar AS, Gepshtein S, Savel'ev S, Albright TD (2019). Mechanisms of spatiotemporal selectivity in cortical area MT. <span style="font-style: italic;">Neuron</span> 101 (3), 514-527. </font></span>
+  
+  <p style="display:none;"   id="Text_5b"> Cortical sensory neurons are characterized by selectivity to stimulation. This selectivity was originally viewed as a part of the fundamental "receptive field" characteristic of neurons. This view was later challenged by evidence that receptive fields are modulated by stimuli outside of the classical receptive field.
+       Here we show that even this modified view of selectivity needs revision. We measured spatial frequency selectivity of neurons in cortical area MT of alert monkeys and found that their selectivity strongly depends on luminance contrast, shifting to higher spatial frequencies as contrast increases. The changes of preferred spatial frequency are large at low temporal frequency and they decrease monotonically as temporal frequency increases. That is, even interactions among basic stimulus dimensions of luminance contrast, spatial frequency and temporal frequency strongly influence neuronal selectivity.
+       This dynamic nature of neuronal selectivity is inconsistent with the notion of stimulus preference as a stable characteristic of cortical neurons. </p>
+  <p style="display:none;" id="Text_5c">
+  <span> &#9679; <a href="https://www.cell.com/neuron/fulltext/S0896-6273(18)31078-X">Publisher link</a> </span><br>
+  <span> &#9679; <a href="http://vcl.salk.edu/~gepshtein/papers/Pawar_etal_Neuron2018.pdf">PDF</a> </span><br>
+   <hr></div>
+  <!-- > -->
+</div>
+  <div><font size="1" face="Calibri">Updated in July 9, 2024 at 6:26 PM PDT</font> </div
+  </body></html>

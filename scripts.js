@@ -63,14 +63,13 @@ function hideDiv(id) {
   document.getElementById(id).style.display = "none";
 }
 function buildMenu() {
-  const fileUrl = "menu.txt";  //  "https://semgep.github.io/VafSoft/menu.txt"; 
+  const fileUrl = "menu.txt";  //  
+  "https://semgep.github.io/VafSoft/menu.txt"; 
   fetch(fileUrl)
     .then((response) => response.text())
     .then((text) => {
-      console.log(text.split("\r\n"));
       let ulList = document.getElementById("ulList");
       for (let elem of text.split("\r\n")) {
-        console.log(elem);
         let newElement = document.createElement("li");
         let newLink = document.createElement("a");
         newLink.href = elem.split(",")[0] + ".html";
